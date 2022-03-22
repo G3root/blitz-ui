@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "esnext",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "noUnusedLocals": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "allowJs": true,
     "resolveJsonModule": true
   }

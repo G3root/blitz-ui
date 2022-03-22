@@ -34,8 +34,12 @@
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
+    "@radix-ui/colors": "^0.1.8",
     "tsup": "^5.12.1",
     "typescript": "^4.6.2",
     "vitest": "^0.6.3"
+  },
+  "dependencies": {
+    "@mertasan/tailwindcss-variables": "^2.0.1"
   }
 }
