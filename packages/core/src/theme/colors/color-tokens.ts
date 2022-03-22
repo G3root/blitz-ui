@@ -1,6 +1,6 @@
-import { cssVar } from "../../utils";
+import { cssVar } from '../../utils';
 
-const withPrefix = cssVar("colors-");
+const withPrefix = cssVar('colors-');
 
 import {
   blackA,
@@ -16,8 +16,8 @@ import {
   greenDark,
   redDark,
   amberDark,
-  purpleDark,
-} from "@radix-ui/colors";
+  purpleDark
+} from '@radix-ui/colors';
 
 export type ColorTokens = {
   [key: number]: string;
@@ -47,7 +47,7 @@ export const whiteAlpha = whiteAlphaValues.reduce<ColorTokens>(
 
 export const commonColors = {
   blackAlpha,
-  whiteAlpha,
+  whiteAlpha
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -91,8 +91,8 @@ const danger = dangerValues.reduce<ColorTokens>((prev, curr, index) => {
 }, {});
 
 const semanticColors = {
-  loContrast: "white",
-  hiContrast: withPrefix("neutral-12"),
+  loContrast: 'white',
+  hiContrast: withPrefix('neutral-12')
 };
 
 export const lightColors = {
@@ -102,7 +102,7 @@ export const lightColors = {
   info,
   warning,
   danger,
-  ...semanticColors,
+  ...semanticColors
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -158,8 +158,8 @@ const dangerDark = dangerDarkValues.reduce<ColorTokens>((prev, curr, index) => {
 }, {});
 
 const semanticDarkColors = {
-  loContrast: withPrefix("neutral-1"),
-  hiContrast: withPrefix("neutral-12"),
+  loContrast: withPrefix('neutral-1'),
+  hiContrast: withPrefix('neutral-12')
 };
 
 export const darkColors: typeof lightColors = {
@@ -169,5 +169,5 @@ export const darkColors: typeof lightColors = {
   info: infoDark,
   warning: warningDark,
   danger: dangerDark,
-  ...semanticDarkColors,
+  ...semanticDarkColors
 };

@@ -1,1 +1,1 @@
-export * from "./cssVar";
+export * from './cssVar';

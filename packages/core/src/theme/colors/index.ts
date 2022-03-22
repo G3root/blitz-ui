@@ -1,2 +1,2 @@
-export * from "./theme-colors";
-export * from "./color-tokens";
+export * from './theme-colors';
+export * from './color-tokens';
