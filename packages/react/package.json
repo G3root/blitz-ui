@@ -1,0 +1,89 @@
+{
+  "name": "@headwind-ui/react",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/g3root/headwind-ui#readme",
+  "bugs": {
+    "url": "https://github.com/g3root/headwind-ui/issues"
+  },
+  "license": "MIT",
+  "author": "Nafees Nazik <nafeesnazik21@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g3root/headwind-ui.git"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "build": "pnpm run build-fast -- --dts-resolve",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "prepublishOnly": "pnpm run build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook --quiet"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@storybook/addon-a11y": "^6.5.0-alpha.49",
+    "@storybook/addon-essentials": "^6.5.0-alpha.49",
+    "@storybook/addon-interactions": "^6.5.0-alpha.49",
+    "@storybook/addon-links": "^6.5.0-alpha.49",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-storysource": "^6.5.0-alpha.49",
+    "@storybook/builder-webpack5": "^6.5.0-alpha.49",
+    "@storybook/manager-webpack5": "^6.5.0-alpha.49",
+    "@storybook/react": "^6.5.0-alpha.49",
+    "@storybook/testing-library": "^0.0.9",
+    "@storybook/testing-react": "^1.2.4",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.40",
+    "@types/react-dom": "^17.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-typescript": "^16.1.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.1.0",
+    "happy-dom": "^2.50.0",
+    "postcss": "^8.4.12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "storybook-dark-mode": "^1.0.9",
+    "tailwindcss": "^3.0.23",
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.2",
+    "vitest": "^0.6.3",
+    "webpack": "5"
+  },
+  "dependencies": {
+    "@headwind-ui/core": "workspace:*",
+    "react-cva": "1.0.3"
+  },
+  "peerDependencies": {
+    "react": ">= 16.3.0"
+  }
+}

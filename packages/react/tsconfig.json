@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "target": "ES2020",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  }
+}
