@@ -1,4 +1,6 @@
 {
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/main",
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
@@ -7,8 +9,20 @@
     "lint": {
       "outputs": []
     },
+    "test": {
+      "outputs": []
+    },
+    "coverage": {
+      "outputs": ["coverage/**"]
+    },
     "dev": {
       "cache": false
+    },
+    "storybook": {
+      "cache": false
+    },
+    "build-storybook": {
+      "outputs": ["storybook-static/**"]
     }
   }
 }
