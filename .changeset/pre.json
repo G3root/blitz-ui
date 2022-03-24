@@ -5,5 +5,7 @@
     "@headwind-ui/core": "0.0.0",
     "@headwind-ui/react": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "ten-pears-fail"
+  ]
 }
