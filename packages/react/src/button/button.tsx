@@ -1,8 +1,8 @@
 import * as React from 'react';
 import type { GetComponentProps } from '../utils/types';
 import { styled } from 'react-cva';
-import { Spinner } from '../Spinner';
-import { ButtonIcon } from './ButtonIcon';
+import { Spinner } from '../spinner';
+import { ButtonIcon } from './button-icon';
 
 const ButtonBase = styled('button', true)(
   'flex items-center font-medium text-center disabled:cursor-not-allowed',

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from './Button';
+import { Button } from './button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Icon from './MockIcon';
 

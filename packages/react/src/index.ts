@@ -1,3 +1,3 @@
-export * from './Button';
-export * from './Spinner';
-export * from './VisuallyHidden';
+export * from './button';
+export * from './spinner';
+export * from './visually-hidden';

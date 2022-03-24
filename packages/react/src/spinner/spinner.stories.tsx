@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Spinner } from './Spinner';
+import { Spinner } from './spinner';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 export default {
   title: 'Components/Feedback/Spinner',

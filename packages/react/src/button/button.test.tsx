@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Button } from './Button';
+import { Button } from './button';
 import Icon from './MockIcon';
 
 it('should render children', () => {
