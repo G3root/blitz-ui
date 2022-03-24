@@ -27,7 +27,10 @@ export default {
       control: { type: 'inline-radio' },
       options: ['start', 'end']
     },
-
+    shape: {
+      control: { type: 'select' },
+      options: ['default', 'pill']
+    },
     loading: {
       control: { type: 'boolean' }
     },
