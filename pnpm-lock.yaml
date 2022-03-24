@@ -73,7 +73,7 @@ importers:
       happy-dom: ^2.50.0
       postcss: ^8.4.12
       react: ^17.0.2
-      react-cva: 1.0.3
+      react-cva: 1.0.4
       react-dom: ^17.0.2
       storybook-dark-mode: ^1.0.9
       tailwindcss: ^3.0.23
@@ -83,7 +83,7 @@ importers:
       webpack: '5'
     dependencies:
       '@blitz-ui/core': link:../core
-      react-cva: 1.0.3_react@17.0.2
+      react-cva: 1.0.4_react@17.0.2
     devDependencies:
       '@babel/core': 7.17.8
       '@storybook/addon-a11y': 6.5.0-alpha.50_react-dom@17.0.2+react@17.0.2
@@ -11529,8 +11529,8 @@ packages:
       webpack: 4.46.0
     dev: true
 
-  /react-cva/1.0.3_react@17.0.2:
-    resolution: {integrity: sha512-8PM5vA+WstmbQik/Ew0kKsw5UbJ76BGkxRvhmAFUhd5O+D0751HZV6ObTI7SED2ZB5+ji+a1YCFzBT7Ux4zueg==}
+  /react-cva/1.0.4_react@17.0.2:
+    resolution: {integrity: sha512-NHK/sCW5ObI1aNXUwDjsYcs87Wx6H7fYla5DHPp1S7fL/mVH6UH5fmxvUWcGToEZPE2wl/0X+27Ng1v9sAln5w==}
     peerDependencies:
       react: '>= 16.3.0'
     dependencies:
