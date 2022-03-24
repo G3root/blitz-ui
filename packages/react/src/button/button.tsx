@@ -35,6 +35,9 @@ const ButtonBase = styled('button', true)(
         outline:
           'motion-reduce:transition-none motion-reduce:hover:transform-none transition duration-200',
         link: 'hover:underline disabled:hover:no-underline'
+      },
+      iconButton: {
+        true: ''
       }
     },
     compoundVariants: [
@@ -326,6 +329,32 @@ const ButtonBase = styled('button', true)(
           'hover:bg-neutral-4',
           'disabled:hover:bg-transparent'
         ]
+      },
+      // rounded button size
+      {
+        iconButton: true,
+        size: 'xs',
+        class: '!p-1.5'
+      },
+      {
+        iconButton: true,
+        size: 'sm',
+        class: '!p-2'
+      },
+      {
+        iconButton: true,
+        size: 'md',
+        class: '!p-3'
+      },
+      {
+        iconButton: true,
+        size: 'lg',
+        class: '!p-4'
+      },
+      {
+        iconButton: true,
+        size: 'xl',
+        class: '!p-5'
       }
     ],
     defaultVariants: {
@@ -339,7 +368,7 @@ const ButtonBase = styled('button', true)(
 
 type ButtonBase = GetComponentProps<typeof ButtonBase>;
 
-type buttonLoadingState =
+export type buttonLoadingState =
   | {
       /**
        * If `true`, the button will show a spinner.
