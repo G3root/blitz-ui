@@ -1,6 +1,6 @@
 ---
-'@headwind-ui/core': minor
-'@headwind-ui/react': minor
+'@blitz-ui/core': minor
+'@blitz-ui/react': minor
 ---
 
 frst beta release

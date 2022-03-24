@@ -1,5 +1,5 @@
 {
-  "name": "@headwind-ui/react",
+  "name": "@blitz-ui/react",
   "version": "0.1.0-beta.0",
   "description": "",
   "keywords": [],
@@ -80,7 +80,7 @@
     "webpack": "5"
   },
   "dependencies": {
-    "@headwind-ui/core": "workspace:*",
+    "@blitz-ui/core": "workspace:*",
     "react-cva": "1.0.3"
   },
   "peerDependencies": {

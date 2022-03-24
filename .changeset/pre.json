@@ -2,10 +2,8 @@
   "mode": "pre",
   "tag": "beta",
   "initialVersions": {
-    "@headwind-ui/core": "0.0.0",
-    "@headwind-ui/react": "0.0.0"
+    "@blitz-ui/core": "0.0.0",
+    "@blitz-ui/react": "0.0.0"
   },
-  "changesets": [
-    "ten-pears-fail"
-  ]
+  "changesets": ["ten-pears-fail"]
 }

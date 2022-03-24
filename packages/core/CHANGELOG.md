@@ -1,4 +1,4 @@
-# @headwind-ui/core
+# @blitz-ui/core
 
 ## 0.1.0-beta.0
 
