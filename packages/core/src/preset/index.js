@@ -31,6 +31,10 @@ module.exports = {
   plugins: [
     require('@mertasan/tailwindcss-variables')({
       darkToRoot: false
+    }),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/forms')({
+      strategy: 'class'
     })
   ]
 };

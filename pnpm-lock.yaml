@@ -26,10 +26,14 @@ importers:
     specifiers:
       '@mertasan/tailwindcss-variables': ^2.0.1
       '@radix-ui/colors': ^0.1.8
+      '@tailwindcss/forms': ^0.5.0
+      '@tailwindcss/line-clamp': ^0.3.1
       tsup: ^5.12.1
       typescript: ^4.6.2
     dependencies:
       '@mertasan/tailwindcss-variables': 2.0.1
+      '@tailwindcss/forms': 0.5.0
+      '@tailwindcss/line-clamp': 0.3.1
     devDependencies:
       '@radix-ui/colors': 0.1.8
       tsup: 5.12.1_typescript@4.6.2
@@ -3934,6 +3938,20 @@ packages:
       regenerator-runtime: 0.13.9
       resolve-from: 5.0.0
     dev: true
+
+  /@tailwindcss/forms/0.5.0:
+    resolution: {integrity: sha512-KzWugryEBFkmoaYcBE18rs6gthWCFHHO7cAZm2/hv3hwD67AzwP7udSCa22E7R1+CEJL/FfhYsJWrc0b1aeSzw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+    dev: false
+
+  /@tailwindcss/line-clamp/0.3.1:
+    resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dev: false
 
   /@testing-library/dom/8.11.3:
     resolution: {integrity: sha512-9LId28I+lx70wUiZjLvi1DB/WT2zGOxUh46glrSNMaWVx849kKAluezVzZrXJfTKKoQTmEOutLes/bHg4Bj3aA==}
@@ -10161,6 +10179,11 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
     dev: true
+
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: false
 
   /minimalistic-assert/1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
