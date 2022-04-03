@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@blitz-ui/core": "workspace:*",
-    "react-cva": "1.0.4"
+    "react-cva": "1.1.0"
   },
   "peerDependencies": {
     "react": ">= 16.3.0"
