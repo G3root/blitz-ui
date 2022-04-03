@@ -1,6 +1,7 @@
 import { Button, ButtonProps, buttonLoadingState } from '../button';
 
 import * as React from 'react';
+import { __DEV__ } from '../utils';
 
 type OmittedProps = 'leftIcon' | 'rightIcon' | 'ref' | 'shape';
 
@@ -24,30 +25,34 @@ interface IconButtonBase extends BaseButtonProps {
 
 type IconButtonProps = IconButtonBase & buttonLoadingState;
 
-function IconButtonWrapper<T>(props: IconButtonProps, ref?: React.Ref<T>) {
-  const { icon, children, rounded, 'aria-label': ariaLabel, ...rest } = props;
+export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  (props, ref) => {
+    const { icon, children, rounded, 'aria-label': ariaLabel, ...rest } = props;
 
-  /**
-   * Passing the icon as prop or children should work
-   */
-  const element = icon || children;
-  const _children = React.isValidElement(element)
-    ? React.cloneElement(element, {
-        'aria-hidden': true,
-        focusable: false
-      })
-    : null;
-  return (
-    <Button
-      shape={rounded ? 'pill' : 'default'}
-      ref={ref}
-      aria-label={ariaLabel}
-      iconButton
-      {...rest}
-    >
-      {_children}
-    </Button>
-  );
+    /**
+     * Passing the icon as prop or children should work
+     */
+    const element = icon || children;
+    const _children = React.isValidElement(element)
+      ? React.cloneElement(element, {
+          'aria-hidden': true,
+          focusable: false
+        })
+      : null;
+    return (
+      <Button
+        shape={rounded ? 'pill' : 'default'}
+        ref={ref}
+        aria-label={ariaLabel}
+        iconButton
+        {...rest}
+      >
+        {_children}
+      </Button>
+    );
+  }
+);
+
+if (__DEV__) {
+  IconButton.displayName = 'IconButton';
 }
-
-export const IconButton = React.forwardRef(IconButtonWrapper);

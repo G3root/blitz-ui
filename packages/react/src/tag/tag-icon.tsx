@@ -1,28 +1,30 @@
 import * as React from 'react';
 
 import { Icon, IconProps } from '../icon';
-import { cx } from '../utils';
+import { cx, __DEV__ } from '../utils';
 
 export interface TagIconLeftProps extends IconProps {}
 
-function TagIconLeftWrapper(
-  { className, ...rest }: TagIconLeftProps,
-  ref: any
-) {
-  const _className = cx(className, '!align-top mr-2');
-  return <Icon ref={ref} className={_className} {...rest} />;
-}
+export const TagIconLeft = React.forwardRef<SVGSVGElement, TagIconLeftProps>(
+  ({ className, ...rest }, ref) => {
+    const _className = cx(className, '!align-top mr-2');
+    return <Icon className={_className} {...rest} ref={ref} />;
+  }
+);
 
-export const TagIconLeft = React.forwardRef(TagIconLeftWrapper);
+if (__DEV__) {
+  TagIconLeft.displayName = 'TagIconLeft';
+}
 
 export interface TagIconRightProps extends IconProps {}
 
-function TagIconRightWrapper(
-  { className, ...rest }: TagIconRightProps,
-  ref: any
-) {
-  const _className = cx(className, '!align-top ml-2');
-  return <Icon ref={ref} className={_className} {...rest} />;
-}
+export const TagIconRight = React.forwardRef<SVGSVGElement, TagIconRightProps>(
+  ({ className, ...rest }, ref) => {
+    const _className = cx(className, '!align-top ml-2');
+    return <Icon className={_className} {...rest} ref={ref} />;
+  }
+);
 
-export const TagIconRight = React.forwardRef(TagIconRightWrapper);
+if (__DEV__) {
+  TagIconRight.displayName = 'TagIconRight';
+}

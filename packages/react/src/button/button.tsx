@@ -3,8 +3,9 @@ import type { GetComponentProps } from '../utils/types';
 import { styled } from 'react-cva';
 import { Spinner } from '../spinner';
 import { ButtonIcon } from './button-icon';
+import { __DEV__ } from '../utils';
 
-const ButtonBase = styled('button', true)(
+const ButtonBase = styled('button')(
   'flex items-center font-medium text-center disabled:cursor-not-allowed',
   {
     variants: {
@@ -423,78 +424,81 @@ export type ButtonProps = ButtonBase & {
    * @type React.ReactElement
    */
   leftIcon?: React.ReactElement;
-  ref?: any;
 } & buttonLoadingState;
 
-function ButtonWrapper<T>(
-  {
-    leftIcon,
-    rightIcon,
-    disabled,
-    loading,
-    loadingText,
-    children,
-    type,
-    variant,
-    spinner,
-    spinnerPlacement,
-    color,
-    ...rest
-  }: ButtonProps,
-  ref?: React.Ref<T>
-) {
-  const isLoading = loading === true;
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      leftIcon,
+      rightIcon,
+      disabled,
+      loading,
+      loadingText,
+      children,
+      type,
+      variant,
+      spinner,
+      spinnerPlacement,
+      color,
+      ...rest
+    },
+    ref
+  ) => {
+    const isLoading = loading === true;
 
-  return (
-    <ButtonBase
-      disabled={loading || disabled}
-      color={color}
-      type={type ?? 'button'}
-      variant={variant}
-      ref={ref}
-      {...rest}
-    >
-      {leftIcon ? <ButtonIcon className="mr-2">{leftIcon}</ButtonIcon> : null}
-      {isLoading && loadingText ? (
-        <>
-          {spinnerPlacement === 'end' ? (
-            <>
-              {loadingText}
-              <span className="ml-2">
-                {spinner ? <>{spinner} </> : <Spinner color="white" />}
-              </span>
-            </>
-          ) : (
-            <>
-              <span className="mr-2">
-                {spinner ? <>{spinner} </> : <Spinner color="white" />}
-              </span>
-              {loadingText}
-            </>
-          )}
-        </>
-      ) : isLoading ? (
-        <>
-          {spinner ? (
-            <>
-              {spinner} <span className="sr-only">Loading...</span>
-            </>
-          ) : (
-            <>
-              <Spinner color="white" />
-              <span className="sr-only">Loading...</span>
-            </>
-          )}
-        </>
-      ) : (
-        <>{children}</>
-      )}
+    return (
+      <ButtonBase
+        disabled={loading || disabled}
+        color={color}
+        type={type ?? 'button'}
+        variant={variant}
+        ref={ref}
+        {...rest}
+      >
+        {leftIcon ? <ButtonIcon className="mr-2">{leftIcon}</ButtonIcon> : null}
+        {isLoading && loadingText ? (
+          <>
+            {spinnerPlacement === 'end' ? (
+              <>
+                {loadingText}
+                <span className="ml-2">
+                  {spinner ? <>{spinner} </> : <Spinner color="white" />}
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="mr-2">
+                  {spinner ? <>{spinner} </> : <Spinner color="white" />}
+                </span>
+                {loadingText}
+              </>
+            )}
+          </>
+        ) : isLoading ? (
+          <>
+            {spinner ? (
+              <>
+                {spinner} <span className="sr-only">Loading...</span>
+              </>
+            ) : (
+              <>
+                <Spinner color="white" />
+                <span className="sr-only">Loading...</span>
+              </>
+            )}
+          </>
+        ) : (
+          <>{children}</>
+        )}
 
-      {rightIcon ? (
-        <ButtonIcon className="ml-2 ">{rightIcon}</ButtonIcon>
-      ) : null}
-    </ButtonBase>
-  );
+        {rightIcon ? (
+          <ButtonIcon className="ml-2 ">{rightIcon}</ButtonIcon>
+        ) : null}
+      </ButtonBase>
+    );
+  }
+);
+
+if (__DEV__) {
+  Button.displayName = 'Button';
 }
-
-export const Button = React.forwardRef(ButtonWrapper);

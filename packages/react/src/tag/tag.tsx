@@ -2,6 +2,7 @@ import * as React from 'react';
 import type { GetComponentProps } from '../utils/types';
 import { styled } from 'react-cva';
 import { createContext } from '../react-utils';
+import { __DEV__ } from '../utils';
 
 export type TagProps = GetComponentProps<typeof TagInner>;
 
@@ -19,24 +20,29 @@ const [TagSizeProvider, useTagSizeContext] = createContext<{
     'useTagSizeContext: `context` is undefined. Seems you forgot to wrap component within <Tag />'
 });
 
-const TagWrapper = ({ size, color, variant, ...rest }: TagProps, ref: any) => {
-  return (
-    <TagSizeProvider value={{ size, color, variant }}>
-      <TagInner
-        ref={ref}
-        size={size}
-        color={color}
-        variant={variant}
-        {...rest}
-      />
-    </TagSizeProvider>
-  );
-};
+export const Tag = React.forwardRef<HTMLSpanElement, TagProps>(
+  ({ size, color, variant, ...rest }, ref) => {
+    return (
+      <TagSizeProvider value={{ size, color, variant }}>
+        <TagInner
+          ref={ref}
+          size={size}
+          color={color}
+          variant={variant}
+          {...rest}
+        />
+      </TagSizeProvider>
+    );
+  }
+);
 
-export const Tag = React.forwardRef(TagWrapper);
+if (__DEV__) {
+  Tag.displayName = 'Tag';
+}
+
 export { useTagSizeContext };
 
-const TagInner = styled('span', true)(
+const TagInner = styled('span')(
   'rounded-l-full rounded-r-full font-medium inline-flex items-center justify-center',
   {
     variants: {

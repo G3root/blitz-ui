@@ -1,4 +1,4 @@
-import { cx } from '../utils';
+import { cx, __DEV__ } from '../utils';
 import * as React from 'react';
 
 const fallbackIcon = {
@@ -24,38 +24,35 @@ export type IconProps = JSX.IntrinsicElements['svg'] & {
   icon?: React.ElementType;
 };
 
-function IconWrapper(
-  {
-    children,
-    viewBox,
-    focusable,
-    className,
-    icon: Element,
-    ...rest
-  }: IconProps,
-  ref: React.ForwardedRef<SVGSVGElement>
-) {
-  const _viewBox = viewBox ?? fallbackIcon.viewBox;
-  const _className = cx(
-    'inline-block flex-shrink-0 box text-current leading-4 align-middle',
-    className
-  );
+export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
+  (
+    { children, viewBox, focusable, className, icon: Element, ...rest },
+    ref
+  ) => {
+    const _viewBox = viewBox ?? fallbackIcon.viewBox;
+    const _className = cx(
+      'inline-block flex-shrink-0 box text-current leading-4 align-middle',
+      className
+    );
 
-  const shared = {
-    ref,
-    focusable,
-    className: _className
-  };
-  if (Element) {
-    return <Element {...shared} {...rest} />;
+    const shared = {
+      ref,
+      focusable,
+      className: _className
+    };
+    if (Element) {
+      return <Element {...shared} {...rest} />;
+    }
+    const _path = (children ?? fallbackIcon.path) as React.ReactNode;
+
+    return (
+      <svg viewBox={_viewBox} {...shared} {...rest}>
+        {_path}
+      </svg>
+    );
   }
-  const _path = (children ?? fallbackIcon.path) as React.ReactNode;
+);
 
-  return (
-    <svg viewBox={_viewBox} {...shared} {...rest}>
-      {_path}
-    </svg>
-  );
+if (__DEV__) {
+  Icon.displayName = 'Icon';
 }
-
-export const Icon = React.forwardRef(IconWrapper);

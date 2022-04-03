@@ -3,7 +3,7 @@ import { styled } from 'react-cva';
 import { useTagSizeContext } from '.';
 import type { GetComponentProps } from '../utils/types';
 import { Icon } from '../icon';
-import { cx } from '../utils';
+import { __DEV__ } from '../utils';
 
 export type TagCloseButtonProps = GetComponentProps<typeof TagCloseButtonInner>;
 
@@ -27,7 +27,7 @@ const TagCloseIcon = () => {
   );
 };
 
-const TagCloseButtonInner = styled('button', true)(
+const TagCloseButtonInner = styled('button')(
   'inline-flex items-center justify-center  text-inherit ml-2 rounded-full motion-reduce:transition-none motion-reduce:hover:transform-none transition duration-200',
   {
     variants: {
@@ -154,7 +154,10 @@ const TagCloseButtonInner = styled('button', true)(
   }
 );
 
-function TagCloseButtonWrapper(props: TagCloseButtonProps, ref: any) {
+export const TagCloseButton = React.forwardRef<
+  HTMLButtonElement,
+  TagCloseButtonProps
+>((props, ref) => {
   const { type, 'aria-label': ariaLabel, children, ...rest } = props;
   const { size, color, variant } = useTagSizeContext();
 
@@ -171,6 +174,8 @@ function TagCloseButtonWrapper(props: TagCloseButtonProps, ref: any) {
       {children === undefined ? <TagCloseIcon /> : <>{children}</>}
     </TagCloseButtonInner>
   );
-}
+});
 
-export const TagCloseButton = React.forwardRef(TagCloseButtonWrapper);
+if (__DEV__) {
+  TagCloseButton.displayName = 'TagCloseButton';
+}

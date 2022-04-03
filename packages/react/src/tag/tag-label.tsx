@@ -3,4 +3,4 @@ import { styled } from 'react-cva';
 
 export type TagLabelProps = GetComponentProps<typeof TagLabel>;
 
-export const TagLabel = styled('span', true)('line-clamp-1');
+export const TagLabel = styled('span')('line-clamp-1');
