@@ -24,6 +24,8 @@ importers:
 
   apps/docs:
     specifiers:
+      '@blitz-ui/core': workspace:*
+      '@blitz-ui/react': workspace:*
       '@types/react': ^17.0.40
       autoprefixer: ^10.4.4
       clsx: ^1.1.1
@@ -33,12 +35,15 @@ importers:
       nextra: 2.0.0-alpha.48
       nextra-theme-docs: 2.0.0-alpha.48
       postcss: ^8.4.12
+      postcss-import: ^14.1.0
       prettier: ^2.5.1
       react: 17.0.2
       react-dom: 17.0.2
       tailwindcss: ^3.0.23
       typescript: ^4.6.2
     dependencies:
+      '@blitz-ui/core': link:../../packages/core
+      '@blitz-ui/react': link:../../packages/react
       clsx: 1.1.1
       next: 12.1.0_react-dom@17.0.2+react@17.0.2
       nextra: 2.0.0-alpha.48_react@17.0.2
@@ -51,24 +56,25 @@ importers:
       eslint-config-next: 12.1.4_next@12.1.0+typescript@4.6.2
       eslint-config-prettier: 8.5.0
       postcss: 8.4.12
+      postcss-import: 14.1.0_postcss@8.4.12
       prettier: 2.5.1
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       typescript: 4.6.2
 
   packages/core:
     specifiers:
-      '@mertasan/tailwindcss-variables': ^2.0.1
       '@radix-ui/colors': ^0.1.8
       '@tailwindcss/forms': ^0.5.0
       '@tailwindcss/line-clamp': ^0.3.1
+      fs-extra: ^10.0.1
       tsup: ^5.12.1
       typescript: ^4.6.2
     dependencies:
-      '@mertasan/tailwindcss-variables': 2.0.1
       '@tailwindcss/forms': 0.5.0
       '@tailwindcss/line-clamp': 0.3.1
     devDependencies:
       '@radix-ui/colors': 0.1.8
+      fs-extra: 10.0.1
       tsup: 5.12.1_typescript@4.6.2
       typescript: 4.6.2
 
@@ -2298,16 +2304,6 @@ packages:
   /@mdx-js/util/1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
     dev: true
-
-  /@mertasan/tailwindcss-variables/2.0.1:
-    resolution: {integrity: sha512-B2ViH/sfiLMzQKAAHQK5fbghnPI9YeOmwbTHNK1e75Dgt6/FQoUQnP7zUBSpvYFq67GReUfd7XneqAIAmlgw8Q==}
-    engines: {node: '>=12.13.0'}
-    peerDependencies:
-      autoprefixer: ^10.0.2
-      postcss: ^8.0.9
-    dependencies:
-      lodash: 4.17.21
-    dev: false
 
   /@mrmlnc/readdir-enhanced/2.2.1:
     resolution: {integrity: sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==}
@@ -10536,6 +10532,7 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
 
   /log-update/4.0.0:
     resolution: {integrity: sha512-9fkkDevMefjg0mmzWFBW8YkFP91OrizzkW3diF7CpG+S2EYdy4+TVfGwz1zeF8x7hCx1ovSPTOE9Ngib74qqUg==}
@@ -12378,7 +12375,6 @@ packages:
     resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
     engines: {node: '>=0.10.0'}
     dev: true
-    optional: true
 
   /pify/3.0.0:
     resolution: {integrity: sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=}
@@ -12455,6 +12451,18 @@ packages:
     resolution: {integrity: sha512-9SiofaZ9CWpQWxOwRh1b/r85KD5y7GgvsNt1056k6OYLvWUun0czCvogfJgylC22uJTwW1KzY3Gz65NZRlvoiQ==}
     dependencies:
       postcss: 7.0.39
+    dev: true
+
+  /postcss-import/14.1.0_postcss@8.4.12:
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.12
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.0
     dev: true
 
   /postcss-js/4.0.0_postcss@8.4.12:
@@ -13058,6 +13066,12 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+
+  /read-cache/1.0.0:
+    resolution: {integrity: sha1-5mTvMRYRZsl1HNvo28+GtftY93Q=}
+    dependencies:
+      pify: 2.3.0
+    dev: true
 
   /read-pkg-up/1.0.1:
     resolution: {integrity: sha1-nWPBMnbAZZGNV/ACpX9AobZD+wI=}

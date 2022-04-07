@@ -29,16 +29,18 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "pnpm run build-fast -- --dts-resolve",
-    "prepublishOnly": "pnpm run build"
+    "build": "pnpm run build-fast -- --dts-resolve && pnpm run build-generate && pnpm run run-generate",
+    "prepublishOnly": "pnpm run build",
+    "build-generate": "tsup scripts/__generate.ts -d scripts --minify",
+    "run-generate": "node scripts/__generate.js"
   },
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",
+    "fs-extra": "^10.0.1",
     "tsup": "^5.12.1",
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@mertasan/tailwindcss-variables": "^2.0.1",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1"
   }

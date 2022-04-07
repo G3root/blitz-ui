@@ -1,7 +1,3 @@
-import { cssVar } from '../../utils';
-
-const withPrefix = cssVar('colors-');
-
 import {
   blackA,
   whiteA,
@@ -18,8 +14,9 @@ import {
   amberDark,
   purpleDark
 } from '@radix-ui/colors';
+import { cssVar } from '../../utils';
 
-export type ColorTokens = {
+type ColorTokens = {
   [key: number]: string;
 };
 
@@ -28,27 +25,16 @@ export type ColorTokens = {
  * -----------------------------------------------------------------------------------------------*/
 
 const blackAlphaValues = Object.values(blackA);
-export const blackAlpha = blackAlphaValues.reduce<ColorTokens>(
-  (prev, curr, index) => {
-    prev[index + 1] = curr;
-    return prev;
-  },
-  {}
-);
+const blackAlpha = blackAlphaValues.reduce<ColorTokens>((prev, curr, index) => {
+  prev[index + 1] = curr;
+  return prev;
+}, {});
 
 const whiteAlphaValues = Object.values(whiteA);
-export const whiteAlpha = whiteAlphaValues.reduce<ColorTokens>(
-  (prev, curr, index) => {
-    prev[index + 1] = curr;
-    return prev;
-  },
-  {}
-);
-
-export const commonColors = {
-  blackAlpha,
-  whiteAlpha
-};
+const whiteAlpha = whiteAlphaValues.reduce<ColorTokens>((prev, curr, index) => {
+  prev[index + 1] = curr;
+  return prev;
+}, {});
 
 /* -------------------------------------------------------------------------------------------------
  * Light palette
@@ -89,21 +75,6 @@ const danger = dangerValues.reduce<ColorTokens>((prev, curr, index) => {
   prev[index + 1] = curr;
   return prev;
 }, {});
-
-const semanticColors = {
-  loContrast: 'white',
-  hiContrast: withPrefix('neutral-12')
-};
-
-export const lightColors = {
-  primary,
-  neutral,
-  success,
-  info,
-  warning,
-  danger,
-  ...semanticColors
-};
 
 /* -------------------------------------------------------------------------------------------------
  * Dark palette
@@ -157,9 +128,18 @@ const dangerDark = dangerDarkValues.reduce<ColorTokens>((prev, curr, index) => {
   return prev;
 }, {});
 
-const semanticDarkColors = {
-  loContrast: withPrefix('neutral-1'),
-  hiContrast: withPrefix('neutral-12')
+export const commonColors = {
+  blackAlpha,
+  whiteAlpha
+};
+
+export const lightColors = {
+  primary,
+  neutral,
+  success,
+  info,
+  warning,
+  danger
 };
 
 export const darkColors: typeof lightColors = {
@@ -168,6 +148,15 @@ export const darkColors: typeof lightColors = {
   success: successDark,
   info: infoDark,
   warning: warningDark,
-  danger: dangerDark,
-  ...semanticDarkColors
+  danger: dangerDark
+};
+
+export const semanticDarkColors = {
+  loContrast: cssVar('neutral-1'),
+  hiContrast: cssVar('neutral-12')
+};
+
+export const semanticLightColors = {
+  loContrast: 'white',
+  hiContrast: cssVar('neutral-12')
 };

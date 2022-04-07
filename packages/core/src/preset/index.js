@@ -1,37 +1,15 @@
-const {
-  lightColors,
-  themeColors,
-  commonColors,
-  darkColors
-} = require('../theme');
+const { themeColors } = require('../theme');
 
 module.exports = {
   theme: {
-    extend: {
-      colors: {
-        ...themeColors
-      }
+    colors: {
+      ...themeColors
     },
-    variables: {
-      DEFAULT: {
-        colors: {
-          ...lightColors,
-          ...commonColors
-        }
-      }
-    },
-    darkVariables: {
-      DEFAULT: {
-        colors: {
-          ...darkColors
-        }
-      }
+    animation: {
+      spin: 'spin 500ms linear infinite'
     }
   },
   plugins: [
-    require('@mertasan/tailwindcss-variables')({
-      darkToRoot: false
-    }),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/forms')({
       strategy: 'class'

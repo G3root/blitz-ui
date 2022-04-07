@@ -1,2 +1,1 @@
-export const cssVar = (prefix?: string) => (value: string) =>
-  `var(--${prefix ? prefix + value : value})`;
+export const cssVar = (value: string) => `var(--${value})`;
