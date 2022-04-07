@@ -37,3 +37,5 @@ yarn-error.log*
 dist
 
 storybook-static
+
+__generate.js
