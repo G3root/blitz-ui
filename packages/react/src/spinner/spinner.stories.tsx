@@ -27,6 +27,9 @@ export default {
     size: {
       control: { type: 'select' },
       options: ['xs', 'sm', 'md', 'lg', 'xl']
+    },
+    label: {
+      control: 'text'
     }
   }
 } as ComponentMeta<typeof Spinner>;
