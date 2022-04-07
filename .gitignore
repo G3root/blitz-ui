@@ -39,3 +39,6 @@ dist
 storybook-static
 
 __generate.js
+
+# Contentlayer
+.contentlayer
