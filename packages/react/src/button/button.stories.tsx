@@ -1,57 +1,53 @@
 import * as React from 'react';
-import { Button } from './button';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Button, ButtonProps } from './button';
+import type { Story } from '@ladle/react';
 import Icon from './MockIcon';
 
 export default {
-  title: 'Components/Forms/Button',
-  component: Button,
-  parameters: { layout: 'centered' },
-  decorators: [
-    (Story) => <div className="flex justify-center w-[90vw]">{Story()}</div>
-  ],
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['default', 'flat', 'ghost', 'outline', 'link']
-    },
-    color: {
-      control: { type: 'select' },
-      options: ['primary', 'neutral', 'success', 'info', 'warning', 'danger']
-    },
-    size: {
-      control: { type: 'select' },
-      options: ['xs', 'sm', 'md', 'lg', 'xl']
-    },
-    spinnerPlacement: {
-      control: { type: 'inline-radio' },
-      options: ['start', 'end']
-    },
-    shape: {
-      control: { type: 'select' },
-      options: ['default', 'pill']
-    },
-    loading: {
-      control: { type: 'boolean' }
-    },
-    disabled: {
-      control: { type: 'boolean' }
-    },
-    loadingText: {
-      control: 'text'
-    },
-    children: {
-      control: 'text'
-    }
+  title: 'Components/Forms/Button'
+};
+
+export const Template: Story<ButtonProps> = ({ children, ref, ...args }) => (
+  <Button {...args}>{children} </Button>
+);
+
+Template.args = {
+  children: 'Button'
+};
+Template.argTypes = {
+  variant: {
+    control: { type: 'select' },
+    options: ['default', 'flat', 'ghost', 'outline', 'link']
   },
-  args: {
-    children: 'Button'
+  color: {
+    control: { type: 'select' },
+    options: ['primary', 'neutral', 'success', 'info', 'warning', 'danger']
+  },
+  size: {
+    control: { type: 'select' },
+    options: ['xs', 'sm', 'md', 'lg', 'xl']
+  },
+  spinnerPlacement: {
+    control: { type: 'radio' },
+    options: ['start', 'end']
+  },
+  shape: {
+    control: { type: 'select' },
+    options: ['default', 'pill']
   }
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Default = Template.bind({});
+  // loading: {
+  //   control: { type: 'boolean' }
+  // },
+  // disabled: {
+  //   control: { type: 'boolean' }
+  // },
+  // loadingText: {
+  //   control: { type: 'text' }
+  // },
+  // children: {
+  //   control: { type: 'text' }
+  // }
+};
 
 export const Colors = () => (
   <div className="flex items-center gap-2 flex-wrap">

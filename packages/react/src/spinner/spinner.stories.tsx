@@ -1,44 +1,39 @@
 import * as React from 'react';
-import { Spinner } from './spinner';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-export default {
-  title: 'Components/Feedback/Spinner',
-  component: Spinner,
-  parameters: { layout: 'centered' },
-  decorators: [
-    (Story) => <div className="flex justify-center w-[90vw]">{Story()}</div>
-  ],
-  argTypes: {
-    color: {
-      control: { type: 'select' },
-      options: [
-        'primary',
-        'neutral',
-        'success',
-        'info',
-        'warning',
-        'danger',
-        'white',
-        'black',
-        'hiContrast',
-        'loContrast'
-      ]
-    },
-    size: {
-      control: { type: 'select' },
-      options: ['xs', 'sm', 'md', 'lg', 'xl']
-    },
-    label: {
-      control: 'text'
-    }
-  }
-} as ComponentMeta<typeof Spinner>;
+import { Spinner, SpinnerProps } from './spinner';
+import type { Story } from '@ladle/react';
 
-const Template: ComponentStory<typeof Spinner> = (args) => (
+export default {
+  title: 'Components/Feedback/Spinner'
+};
+
+export const Template: Story<SpinnerProps> = ({ ref, ...args }) => (
   <Spinner {...args} />
 );
 
-export const Default = Template.bind({});
+Template.argTypes = {
+  color: {
+    control: { type: 'select' },
+    options: [
+      'primary',
+      'neutral',
+      'success',
+      'info',
+      'warning',
+      'danger',
+      'white',
+      'black',
+      'hiContrast',
+      'loContrast'
+    ]
+  },
+  size: {
+    control: { type: 'select' },
+    options: ['xs', 'sm', 'md', 'lg', 'xl']
+  }
+  // label: {
+  //   control: 'text'
+  // }
+};
 
 export const Sizes = () => (
   <div className="flex items-center gap-2 flex-wrap">

@@ -1,29 +1,16 @@
 import * as React from 'react';
 import { Textarea } from '../textarea/textarea';
-import { FormControl } from './form-control';
+import { FormControl, FormControlProps } from './form-control';
 import { FormErrorMessage } from './form-error';
 import { FormHelperText } from './form-helper-text';
 import { FormLabel } from './form-label';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 export default {
-  title: 'Components/Forms/FormControl',
-  parameters: { layout: 'centered' },
-  decorators: [
-    (Story) => <div className="flex justify-center w-[90vw]">{Story()}</div>
-  ],
-  isRequired: {
-    control: { type: 'boolean' }
-  },
-  isInvalid: {
-    control: { type: 'boolean' }
-  },
-  isReadOnly: {
-    control: { type: 'boolean' }
-  }
-} as ComponentMeta<typeof FormControl>;
+  title: 'Components/Forms/FormControl'
+};
 
-const Template: ComponentStory<typeof FormControl> = (args) => (
+export const Template: Story<FormControlProps> = (args) => (
   <FormControl {...args}>
     <FormLabel htmlFor="first-name">First name</FormLabel>
     <Textarea />
@@ -31,7 +18,17 @@ const Template: ComponentStory<typeof FormControl> = (args) => (
   </FormControl>
 );
 
-export const Default = Template.bind({});
+// Template.argTypes = {
+//   isRequired: {
+//     control: { type: 'boolean' }
+//   },
+//   isInvalid: {
+//     control: { type: 'boolean' }
+//   },
+//   isReadOnly: {
+//     control: { type: 'boolean' }
+//   }
+// };
 
 export const InputExample = () => (
   <FormControl isInvalid isRequired>

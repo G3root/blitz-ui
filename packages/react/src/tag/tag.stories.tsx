@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Tag } from './tag';
 import { TagLabel } from './tag-label';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { TagIconLeft, TagIconRight } from './tag-icon';
 import { TagCloseButton } from './tag-close-button';
 import Icon from '../button/MockIcon';
@@ -9,10 +9,6 @@ import Icon from '../button/MockIcon';
 export default {
   title: 'Components/Data Display/Tag',
   component: Tag,
-  parameters: { layout: 'centered' },
-  decorators: [
-    (Story) => <div className="flex justify-center w-[90vw]">{Story()}</div>
-  ],
   argTypes: {
     size: {
       control: { type: 'select' },
@@ -33,9 +29,9 @@ export default {
   args: {
     children: 'Tag'
   }
-} as ComponentMeta<typeof Tag>;
+};
 
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
+const Template = (args) => <Tag {...args} />;
 
 export const Default = Template.bind({});
 

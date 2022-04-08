@@ -1,22 +1,14 @@
 import * as React from 'react';
 
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Textarea } from './textarea';
-
+import { Textarea, TextareaProps } from './textarea';
+import type { Story } from '@ladle/react';
 export default {
-  title: 'Components/Forms/Textarea',
-  component: Textarea,
-  parameters: { layout: 'centered' },
-  decorators: [
-    (Story) => <div className="flex justify-center w-[90vw]">{Story()}</div>
-  ]
-} as ComponentMeta<typeof Textarea>;
+  title: 'Components/Forms/Textarea'
+};
 
-const Template: ComponentStory<typeof Textarea> = (args) => (
+export const Template: Story<TextareaProps> = ({ ref, ...args }) => (
   <Textarea {...args} />
 );
-
-export const Default = Template.bind({});
 
 export const basic = () => <Textarea defaultValue="This is a textarea" />;
 
