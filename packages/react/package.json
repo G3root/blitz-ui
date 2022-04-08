@@ -69,7 +69,8 @@
   },
   "dependencies": {
     "@blitz-ui/core": "workspace:*",
-    "react-cva": "1.1.0"
+    "class-variance-authority": "^0.2.1",
+    "react-cva": "1.2.0"
   },
   "peerDependencies": {
     "react": ">= 16.3.0"
