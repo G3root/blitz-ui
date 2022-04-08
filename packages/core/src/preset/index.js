@@ -3,7 +3,9 @@ const { themeColors } = require('../theme');
 module.exports = {
   theme: {
     colors: {
-      ...themeColors
+      ...themeColors,
+      black: 'black',
+      white: 'white'
     },
     animation: {
       spin: 'spin 500ms linear infinite'

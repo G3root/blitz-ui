@@ -11,7 +11,7 @@ export const themeColors: typeof mergedColors = mergedColorsKeys.reduce(
   (prev: any, curr) => {
     const value = mergedColors[curr];
     if (typeof value === 'string') {
-      prev[curr] = cssVar(curr.toLowerCase());
+      prev[curr] = cssVar(curr);
       return prev;
     } else {
       const rangeKeys = Object.keys(value) as unknown as Array<
@@ -20,9 +20,7 @@ export const themeColors: typeof mergedColors = mergedColorsKeys.reduce(
 
       const rangeValues = rangeKeys.reduce<{ [key: number]: string }>(
         (range, currentRange) => {
-          range[currentRange] = cssVar(
-            curr.toLowerCase() + '-' + String(currentRange)
-          );
+          range[currentRange] = cssVar(curr + '-' + String(currentRange));
           return range;
         },
         {}
