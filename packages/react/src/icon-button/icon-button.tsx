@@ -23,7 +23,7 @@ interface IconButtonBase extends BaseButtonProps {
   'aria-label': string;
 }
 
-type IconButtonProps = IconButtonBase & buttonLoadingState;
+export type IconButtonProps = IconButtonBase & buttonLoadingState;
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (props, ref) => {

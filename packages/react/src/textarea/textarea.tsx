@@ -73,7 +73,7 @@ export const TextareaInner = styled('textarea')(
   }
 );
 
-interface TextareaProps extends TextareaInnerProps {}
+export interface TextareaProps extends TextareaInnerProps {}
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ rows, ...rest }, ref) => {

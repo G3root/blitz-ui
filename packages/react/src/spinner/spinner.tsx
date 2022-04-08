@@ -33,7 +33,7 @@ const SpinnerBase = styled('svg')('animate-spin motion-reduce:hidden h-5 w-5', {
   }
 });
 
-interface SpinnerProps extends SpinnerBase {
+export interface SpinnerProps extends SpinnerBase {
   label?: string;
 }
 
