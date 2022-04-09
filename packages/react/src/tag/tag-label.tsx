@@ -1,6 +1,26 @@
-import type { GetComponentProps } from '../utils/types';
-import { styled } from 'react-cva';
+import {
+  createComponent,
+  createElement,
+  createHook,
+  As,
+  Options,
+  Props,
+  cx
+} from '../utils';
 
-export type TagLabelProps = GetComponentProps<typeof TagLabel>;
+const useTagLabel = createHook<TagLabelOptions>((props) => {
+  props = {
+    ...props,
+    className: cx('line-clamp-1', props.className)
+  };
+  return props;
+});
 
-export const TagLabel = styled('span')('line-clamp-1');
+export const TagLabel = createComponent<TagLabelOptions>((props) => {
+  const htmlProps = useTagLabel(props);
+  return createElement('span', htmlProps);
+});
+
+type TagLabelOptions<T extends As = 'span'> = Options<T>;
+
+export type TagLabelProps<T extends As = 'span'> = Props<TagLabelOptions<T>>;

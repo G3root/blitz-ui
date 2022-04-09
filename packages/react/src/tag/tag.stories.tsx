@@ -1,39 +1,36 @@
 import * as React from 'react';
-import { Tag } from './tag';
+import { Tag, TagProps } from './tag';
 import { TagLabel } from './tag-label';
 
 import { TagIconLeft, TagIconRight } from './tag-icon';
 import { TagCloseButton } from './tag-close-button';
+import type { Story } from '@ladle/react';
 import Icon from '../button/MockIcon';
 
 export default {
-  title: 'Components/Data Display/Tag',
-  component: Tag,
-  argTypes: {
-    size: {
-      control: { type: 'select' },
-      options: ['sm', 'md', 'lg']
-    },
-    variant: {
-      control: { type: 'select' },
-      options: ['solid', 'subtle', 'outline']
-    },
-    color: {
-      control: { type: 'select' },
-      options: ['primary', 'neutral', 'success', 'info', 'warning', 'danger']
-    },
-    children: {
-      control: 'text'
-    }
+  title: 'Components/Data Display/Tag'
+};
+
+export const Template: Story<TagProps> = (args) => <Tag {...args} />;
+
+Template.argTypes = {
+  size: {
+    control: { type: 'select' },
+    options: ['sm', 'md', 'lg']
   },
-  args: {
-    children: 'Tag'
+  variant: {
+    control: { type: 'select' },
+    options: ['solid', 'subtle', 'outline']
+  },
+  color: {
+    control: { type: 'select' },
+    options: ['primary', 'neutral', 'success', 'info', 'warning', 'danger']
   }
 };
 
-const Template = (args) => <Tag {...args} />;
-
-export const Default = Template.bind({});
+Template.args = {
+  children: 'Tag'
+};
 
 export const Variants = () => (
   <div className="space-y-8">

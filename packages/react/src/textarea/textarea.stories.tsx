@@ -6,9 +6,7 @@ export default {
   title: 'Components/Forms/Textarea'
 };
 
-export const Template: Story<TextareaProps> = ({ ref, ...args }) => (
-  <Textarea {...args} />
-);
+export const Template: Story<TextareaProps> = (args) => <Textarea {...args} />;
 
 export const basic = () => <Textarea defaultValue="This is a textarea" />;
 
@@ -21,7 +19,7 @@ export const disabled = () => (
 );
 
 export const invalid = () => (
-  <Textarea invalid placeholder="An invalid textarea" />
+  <Textarea isInvalid placeholder="An invalid textarea" />
 );
 
 export const withSizes = () => (

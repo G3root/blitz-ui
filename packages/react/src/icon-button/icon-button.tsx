@@ -1,7 +1,7 @@
 import { Button, ButtonProps, buttonLoadingState } from '../button';
 
 import * as React from 'react';
-import { __DEV__ } from '../utils';
+import { createComponent } from '../utils';
 
 type OmittedProps = 'leftIcon' | 'rightIcon' | 'ref' | 'shape';
 
@@ -25,14 +25,14 @@ interface IconButtonBase extends BaseButtonProps {
 
 export type IconButtonProps = IconButtonBase & buttonLoadingState;
 
-export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  (props, ref) => {
-    const { icon, children, rounded, 'aria-label': ariaLabel, ...rest } = props;
-
+export const IconButton = createComponent<IconButtonProps>(
+  ({ icon, children, rounded, 'aria-label': ariaLabel, ...rest }) => {
     /**
      * Passing the icon as prop or children should work
      */
-    const element = icon || children;
+    const childrenElement = children as SVGElement;
+    const element = icon || childrenElement;
+
     const _children = React.isValidElement(element)
       ? React.cloneElement(element, {
           'aria-hidden': true,
@@ -42,7 +42,6 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <Button
         shape={rounded ? 'pill' : 'default'}
-        ref={ref}
         aria-label={ariaLabel}
         iconButton
         {...rest}
@@ -52,7 +51,3 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     );
   }
 );
-
-if (__DEV__) {
-  IconButton.displayName = 'IconButton';
-}

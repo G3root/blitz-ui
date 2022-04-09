@@ -1,19 +1,30 @@
-import * as React from 'react';
-import { cx, __DEV__ } from '../utils';
+import {
+  createComponent,
+  createElement,
+  createHook,
+  As,
+  Options,
+  Props,
+  cx
+} from '../utils';
 
-export type VisuallyHiddenProps = JSX.IntrinsicElements['span'];
-
-export const VisuallyHidden = React.forwardRef<
-  HTMLSpanElement,
-  VisuallyHiddenProps
->(({ children, className, ...rest }, ref) => {
-  return (
-    <span className={cx('sr-only', className)} {...rest} ref={ref}>
-      {children}
-    </span>
-  );
+const useVisuallyHidden = createHook<VisuallyHiddenOptions>((props) => {
+  props = {
+    ...props,
+    className: cx('sr-only', props.className)
+  };
+  return props;
 });
 
-if (__DEV__) {
-  VisuallyHidden.displayName = 'VisuallyHidden';
-}
+export const VisuallyHidden = createComponent<VisuallyHiddenOptions>(
+  (props) => {
+    const htmlProps = useVisuallyHidden(props);
+    return createElement('span', htmlProps);
+  }
+);
+
+type VisuallyHiddenOptions<T extends As = 'span'> = Options<T>;
+
+export type VisuallyHiddenProps<T extends As = 'span'> = Props<
+  VisuallyHiddenOptions<T>
+>;

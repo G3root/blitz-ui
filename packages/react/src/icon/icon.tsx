@@ -1,6 +1,5 @@
-import { cx, __DEV__ } from '../utils';
 import * as React from 'react';
-
+import { createComponent, cx, As, Options, Props } from '../utils';
 const fallbackIcon = {
   path: (
     <g stroke="currentColor" strokeWidth="1.5">
@@ -20,15 +19,14 @@ const fallbackIcon = {
   viewBox: '0 0 24 24'
 };
 
-export type IconProps = JSX.IntrinsicElements['svg'] & {
+type IconOptions<T extends As = 'svg'> = Options<T> & {
   icon?: React.ElementType;
 };
 
-export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
-  (
-    { children, viewBox, focusable, className, icon: Element, ...rest },
-    ref
-  ) => {
+export type IconProps<T extends As = 'svg'> = Props<IconOptions<T>>;
+
+export const Icon = createComponent<IconOptions>(
+  ({ as, children, viewBox, focusable, className, icon: Element, ...rest }) => {
     const _viewBox = viewBox ?? fallbackIcon.viewBox;
     const _className = cx(
       'inline-block flex-shrink-0 box text-current leading-4 align-middle',
@@ -36,7 +34,6 @@ export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
     );
 
     const shared = {
-      ref,
       focusable,
       className: _className
     };
@@ -52,7 +49,3 @@ export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
     );
   }
 );
-
-if (__DEV__) {
-  Icon.displayName = 'Icon';
-}
