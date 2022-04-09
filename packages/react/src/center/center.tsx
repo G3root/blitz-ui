@@ -8,7 +8,7 @@ import {
   cx
 } from '../utils';
 
-export const useCenter = createHook<CenterOptions>((props) => {
+const useCenter = createHook<CenterOptions>((props) => {
   props = {
     ...props,
     className: cx('flex items-center justify-center', props.className)
@@ -21,6 +21,6 @@ export const Center = createComponent<CenterOptions>((props) => {
   return createElement('div', htmlProps);
 });
 
-export type CenterOptions<T extends As = 'div'> = Options<T>;
+type CenterOptions<T extends As = 'div'> = Options<T>;
 
 export type CenterProps<T extends As = 'div'> = Props<CenterOptions<T>>;
