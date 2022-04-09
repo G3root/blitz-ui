@@ -1,0 +1,34 @@
+import {
+  createComponent,
+  createElement,
+  createHook,
+  As,
+  Options,
+  Props
+} from '../utils';
+import { HeadingStyle, HeadingStyleProps } from './heading.style';
+
+export const useHeading = createHook<HeadingOptions>(
+  ({ size, breakWords, color, ...props }) => {
+    props = {
+      ...props,
+      className: HeadingStyle({
+        size,
+        breakWords,
+        color,
+        class: props.className
+      })
+    };
+    return props;
+  }
+);
+
+export const Heading = createComponent<HeadingOptions>((props) => {
+  const htmlProps = useHeading(props);
+  return createElement('h2', htmlProps);
+});
+
+export type HeadingOptions<T extends As = 'h2'> = Options<T> &
+  HeadingStyleProps;
+
+export type HeadingProps<T extends As = 'h2'> = Props<HeadingOptions<T>>;
