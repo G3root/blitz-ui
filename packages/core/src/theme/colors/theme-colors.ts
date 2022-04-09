@@ -1,7 +1,11 @@
-import { commonColors, lightColors } from './color-tokens';
+import { commonColors, lightColors, semanticLightColors } from './color-tokens';
 import { cssVar } from '../../utils';
 
-const mergedColors = { ...commonColors, ...lightColors };
+const mergedColors = {
+  ...commonColors,
+  ...lightColors,
+  ...semanticLightColors
+};
 
 const mergedColorsKeys = Object.keys(mergedColors) as Array<
   keyof typeof mergedColors
