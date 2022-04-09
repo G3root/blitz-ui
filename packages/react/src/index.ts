@@ -7,3 +7,6 @@ export * from './icon-button';
 export * from './icon';
 export * from './hooks';
 export * from './form-control';
+export * from './center';
+export * from './container';
+export * from './heading';
