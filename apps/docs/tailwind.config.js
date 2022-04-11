@@ -3,9 +3,16 @@ const { preset } = require('@blitz-ui/core');
 module.exports = {
   darkMode: 'class',
   content: [
-    './src/**/*.{jsx,tsx}',
-    './node_modules/@blitz-ui/react/src/**/*.{jsx,tsx}',
-    './node_modules/nextra-theme-docs/**/*.{jsx,tsx,css}'
+    './node_modules/@blitz-ui/react/src/**/*.tsx',
+    './nextra-theme-docs/**/*.js',
+    './nextra-theme-docs/**/*.tsx',
+    './nextra-theme-docs/**/*.css',
+    './src/components/**/*.js',
+    './src/components/**/*.tsx',
+    './src/pages/**/*.md',
+    './src/pages/**/*.mdx',
+    './src/theme.config.js',
+    './styles.css'
   ],
   theme: {
     fontFamily: {
