@@ -11,23 +11,6 @@ export const Template: Story<HeadingProps> = ({ children, ...args }) => (
 );
 
 Template.argTypes = {
-  color: {
-    control: { type: 'select' },
-    options: [
-      'primary',
-      'neutral',
-      'success',
-      'info',
-      'warning',
-      'danger',
-      'hiContrast',
-      'loContrast'
-    ]
-  },
-  breakWords: {
-    control: { type: 'select' },
-    options: ['normal', 'words', 'all', 'none']
-  },
   size: {
     control: { type: 'select' },
     options: [
