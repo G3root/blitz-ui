@@ -1,0 +1,102 @@
+---
+title: Heading
+description: Headings are used for rendering headlines.
+---
+
+# Heading
+
+Headings are used for rendering headlines.
+it renders an `<h2>` tag by default.
+
+### Import
+
+```js
+import { Heading } from '@blitz-ui/react';
+```
+
+### Usage
+
+<ComponentContainer>
+  <Heading>I'm a Heading</Heading>
+</ComponentContainer>
+
+```jsx
+<Heading>I'm a Heading</Heading>
+```
+
+### Changing font size
+
+To increase the font size of the text, you can pass the `size` prop.
+It apply a combination of fontSize and lineHeight for an optimal reading experience
+
+<ComponentContainer>
+  <div className="flex gap-2 flex-col">
+    <Heading className="line-clamp-1" size="9xl">(9xl) The quick brown fox</Heading>
+    <Heading className="line-clamp-1" size="8xl">(8xl) The quick brown fox</Heading>
+    <Heading className="line-clamp-1" size="7xl">(7xl) The quick brown fox</Heading>
+    <Heading as="h6" size="6xl">(6xl) renders H6 Tag</Heading>
+    <Heading as="h5" size="5xl">(5xl) renders H5 Tag</Heading>
+    <Heading as="h4" size="4xl">(4xl) renders H4 Tag</Heading>
+    <Heading as="h3" size="3xl">(3xl) renders H3 Tag</Heading>
+    <Heading as="h2" size="2xl">(2xl) renders H2 Tag</Heading>
+    <Heading as="h1" size="xl">(xl) renders H1 Tag</Heading>
+    <Heading size="lg">(lg) The quick brown fox</Heading>
+    <Heading size="base">(base) The quick brown fox</Heading>
+    <Heading size="sm">(sm) The quick brown fox</Heading>
+    <Heading size="xs">(xs) The quick brown fox</Heading>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex gap-2 flex-col">
+  <Heading className="line-clamp-1" size="9xl">
+    (9xl) The quick brown fox
+  </Heading>
+  <Heading className="line-clamp-1" size="8xl">
+    (8xl) The quick brown fox
+  </Heading>
+  <Heading className="line-clamp-1" size="7xl">
+    (7xl) The quick brown fox
+  </Heading>
+  <Heading as="h6" size="6xl">
+    (6xl) renders H6 Tag
+  </Heading>
+  <Heading as="h5" size="5xl">
+    (5xl) renders H5 Tag
+  </Heading>
+  <Heading as="h4" size="4xl">
+    (4xl) renders H4 Tag
+  </Heading>
+  <Heading as="h3" size="3xl">
+    (3xl) renders H3 Tag
+  </Heading>
+  <Heading as="h2" size="2xl">
+    (2xl) renders H2 Tag
+  </Heading>
+  <Heading as="h1" size="xl">
+    (xl) renders H1 Tag
+  </Heading>
+  <Heading size="lg">(lg) The quick brown fox</Heading>
+  <Heading size="base">(base) The quick brown fox</Heading>
+  <Heading size="sm">(sm) The quick brown fox</Heading>
+  <Heading size="xs">(xs) The quick brown fox</Heading>
+</div>
+```
+
+### Override style
+
+You can change the entire style of the text by className.
+
+<ComponentContainer>
+  <Heading className="text-primary-11">I'm a Heading</Heading>
+</ComponentContainer>
+
+```jsx
+<Heading className="text-primary-11">I'm a Heading</Heading>
+```
+
+##### `size`
+
+- Description: The size of the text. A combination of `font-size` and `line-height`.
+- Type: `xs` | `sm` | `base` | `lg` | `xl` | `2xl` | `3xl` | `4xl` | `5xl` | `6xl` | `7xl` | `8xl` | `9xl`
+- Default: `xl`

@@ -41,7 +41,16 @@ export const componentsSidebar: Routes = {
             }
           ]
         },
-
+        {
+          title: 'Typography',
+          path: '/docs/components/typography',
+          routes: [
+            {
+              title: 'Heading',
+              path: '/docs/components/typography/heading'
+            }
+          ]
+        },
         {
           title: 'Disclosure',
           path: '/docs/components/disclosure',
