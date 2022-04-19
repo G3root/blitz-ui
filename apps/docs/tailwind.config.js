@@ -1,33 +1,40 @@
-const { preset } = require('@blitz-ui/core');
+const { preset } = require("@blitz-ui/core");
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: 'class',
   content: [
-    './node_modules/@blitz-ui/react/src/**/*.tsx',
-    './nextra-theme-docs/**/*.js',
-    './nextra-theme-docs/**/*.tsx',
-    './nextra-theme-docs/**/*.css',
-    './src/components/**/*.js',
-    './src/components/**/*.tsx',
-    './src/pages/**/*.md',
-    './src/pages/**/*.mdx',
-    './src/theme.config.js',
-    './styles.css'
+    "./src/**/*.{jsx,tsx}",
+    "./node_modules/@blitz-ui/react/**/*.{jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
-    fontFamily: {
-      sans: [`"Inter"`, 'sans-serif'],
-      mono: [
-        'Menlo',
-        'Monaco',
-        'Lucida Console',
-        'Liberation Mono',
-        'DejaVu Sans Mono',
-        'Bitstream Vera Sans Mono',
-        'Courier New',
-        'monospace'
-      ]
-    }
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
+    extend: {
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        black: "#000",
+        white: "#fff",
+        gray: colors.gray,
+        slate: colors.slate,
+        neutral: colors.neutral,
+        red: colors.red,
+        orange: colors.orange,
+        yellow: colors.yellow,
+        prime: colors.blue,
+        dark: "#111",
+      },
+    },
   },
-  presets: [preset]
+  presets: [preset],
 };

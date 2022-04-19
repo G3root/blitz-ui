@@ -4,3 +4,77 @@ description: Getting Started.
 ---
 
 # Getting Started
+
+### Prerequisite
+
+You need `PostCSS`, `postcss-import`, `autoprefixer`
+and `Tailwind CSS` installed.
+
+```bash
+npm install -D tailwindcss postcss autoprefixer postcss-import
+```
+
+### installation
+
+Inside your React project directory, install Blitz UI by running either of the following:
+
+```bash
+npm install @blitz-ui/react @blitz-ui/core
+```
+
+```bash
+yarn add @blitz-ui/react @blitz-ui/core
+```
+
+```bash
+pnpm add @blitz-ui/react @blitz-ui/core
+```
+
+### Setup
+
+1. setup Tailwind CSS.
+
+```bash
+npx tailwindcss init
+```
+
+2. add `postcss-import` and `tailwindcss/nesting` plugin into your `postcss.config.js` file.
+
+```js {3,4}
+module.exports = {
+  plugins: {
+    'postcss-import': {},
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {}
+  }
+};
+```
+
+3. Configure your Tailwind CSS config file.
+
+```js {1,4-7,11}
+const { preset } = require('@blitz-ui/core');
+
+module.exports = {
+  content: [
+    './src/**/*.{jsx,tsx}',
+    './node_modules/@blitz-ui/react/**/*.{jsx,tsx}'
+  ],
+  theme: {
+    extend: {}
+  },
+  presets: [preset]
+};
+```
+
+4. Add the Tailwind directives to your CSS
+
+Add the `Tailwind` and `Blitz-UI` import layers to your main CSS file.
+
+```css
+@import 'tailwindcss/base';
+@import '@blitz-ui/core/dist/styles/base.css';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+```
