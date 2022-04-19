@@ -17,7 +17,7 @@ Template.args = {
 Template.argTypes = {
   variant: {
     control: { type: 'select' },
-    options: ['default', 'flat', 'ghost', 'outline', 'link']
+    options: ['solid', 'flat', 'ghost', 'outline', 'link']
   },
   color: {
     control: { type: 'select' },
@@ -33,7 +33,7 @@ Template.argTypes = {
   },
   shape: {
     control: { type: 'select' },
-    options: ['default', 'pill']
+    options: ['square', 'pill']
   }
   // loading: {
   //   control: { type: 'boolean' }
@@ -73,22 +73,22 @@ export const Sizes = () => (
 export const Variants = () => (
   <div className="space-y-8">
     <div className="flex items-center gap-2 flex-wrap">
-      <Button variant="default" color="primary">
+      <Button variant="solid" color="primary">
         Primary
       </Button>
-      <Button variant="default" color="neutral">
+      <Button variant="solid" color="neutral">
         Neutral
       </Button>
-      <Button variant="default" color="info">
+      <Button variant="solid" color="info">
         Info
       </Button>
-      <Button variant="default" color="success">
+      <Button variant="solid" color="success">
         Success
       </Button>
-      <Button variant="default" color="warning">
+      <Button variant="solid" color="warning">
         Warning
       </Button>
-      <Button variant="default" color="danger">
+      <Button variant="solid" color="danger">
         Danger
       </Button>
     </div>

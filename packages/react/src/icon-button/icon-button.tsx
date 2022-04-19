@@ -41,7 +41,7 @@ export const IconButton = createComponent<IconButtonProps>(
       : null;
     return (
       <Button
-        shape={rounded ? 'pill' : 'default'}
+        shape={rounded ? 'pill' : 'square'}
         aria-label={ariaLabel}
         iconButton
         {...rest}

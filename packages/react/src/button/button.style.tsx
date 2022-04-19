@@ -1,7 +1,7 @@
 import { cva, VariantProps } from '../utils';
 
 export const ButtonInnerStyle = cva(
-  'flex items-center font-medium text-center disabled:cursor-not-allowed',
+  'flex items-center font-medium text-center disabled:cursor-not-allowed ',
   {
     variants: {
       color: {
@@ -13,7 +13,7 @@ export const ButtonInnerStyle = cva(
         neutral: ''
       },
       shape: {
-        default: 'rounded-lg',
+        square: 'rounded-lg',
         pill: 'rounded-full'
       },
       size: {
@@ -24,7 +24,7 @@ export const ButtonInnerStyle = cva(
         xl: 'px-6 py-3.5 text-base '
       },
       variant: {
-        default: '',
+        solid: '',
         flat: '',
         ghost:
           'motion-reduce:transition-none motion-reduce:hover:transform-none transition duration-200',
@@ -39,7 +39,7 @@ export const ButtonInnerStyle = cva(
     compoundVariants: [
       //default variant
       {
-        variant: 'default',
+        variant: 'solid',
         color: 'primary',
         class: [
           'bg-primary-9',
@@ -49,7 +49,7 @@ export const ButtonInnerStyle = cva(
         ]
       },
       {
-        variant: 'default',
+        variant: 'solid',
         color: 'info',
         class: [
           'bg-info-9',
@@ -59,7 +59,7 @@ export const ButtonInnerStyle = cva(
         ]
       },
       {
-        variant: 'default',
+        variant: 'solid',
         color: 'success',
         class: [
           'bg-success-9',
@@ -69,7 +69,7 @@ export const ButtonInnerStyle = cva(
         ]
       },
       {
-        variant: 'default',
+        variant: 'solid',
         color: 'warning',
         class: [
           'bg-warning-9',
@@ -79,7 +79,7 @@ export const ButtonInnerStyle = cva(
         ]
       },
       {
-        variant: 'default',
+        variant: 'solid',
         color: 'danger',
         class: [
           'bg-danger-9',
@@ -89,7 +89,7 @@ export const ButtonInnerStyle = cva(
         ]
       },
       {
-        variant: 'default',
+        variant: 'solid',
         color: 'neutral',
         class: [
           'bg-neutral-9',
@@ -355,9 +355,9 @@ export const ButtonInnerStyle = cva(
     ],
     defaultVariants: {
       color: 'primary',
-      shape: 'default',
+      shape: 'square',
       size: 'md',
-      variant: 'default'
+      variant: 'solid'
     }
   }
 );

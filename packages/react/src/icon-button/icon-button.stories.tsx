@@ -20,7 +20,7 @@ Template.args = {
 Template.argTypes = {
   variant: {
     control: { type: 'select' },
-    options: ['default', 'flat', 'ghost', 'outline', 'link']
+    options: ['solid', 'flat', 'ghost', 'outline', 'link']
   },
   color: {
     control: { type: 'select' },
