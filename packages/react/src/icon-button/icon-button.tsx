@@ -30,7 +30,7 @@ export const IconButton = createComponent<IconButtonProps>(
     /**
      * Passing the icon as prop or children should work
      */
-    const childrenElement = children as SVGElement;
+    const childrenElement = children as unknown as SVGElement;
     const element = icon || childrenElement;
 
     const _children = React.isValidElement(element)

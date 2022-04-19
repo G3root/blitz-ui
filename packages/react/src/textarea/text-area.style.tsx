@@ -2,7 +2,7 @@ import { cva, VariantProps } from '../utils';
 
 export const textAreaStyle = cva(
   [
-    'w-full text-neutral-12',
+    'w-full text-neutral-12 bg-loContrast',
     'disabled:cursor-not-allowed',
     'placeholder:text-neutral-9',
     'motion-reduce:transition-none motion-reduce:hover:transform-none transition duration-300'
