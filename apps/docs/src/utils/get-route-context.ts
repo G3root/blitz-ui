@@ -24,18 +24,25 @@ export interface RouteContext {
   route?: RouteItem;
 }
 
-export const getAllRoutes = (routes: any) => {
+export const getAllRoutes = (routes: RouteItem[]) => {
   const allRoutes: Routes | RouteItem[] = [];
 
-  routes[0].routes.forEach((route: RouteItem) => {
-    if (route.routes) {
-      route.routes.forEach((item) => {
-        allRoutes.push(item);
-      });
-    } else {
+  for (const route of routes) {
+    if (!route.routes) {
       allRoutes.push(route);
     }
-  });
+    if (route.routes) {
+      route.routes.forEach((route: RouteItem) => {
+        if (route.routes) {
+          route.routes.forEach((item) => {
+            allRoutes.push(item);
+          });
+        } else {
+          allRoutes.push(route);
+        }
+      });
+    }
+  }
 
   return allRoutes;
 };
@@ -62,7 +69,7 @@ export const getRouteContext = (
       ctx = {
         nextRoute,
         prevRoute,
-        route: _route,
+        route: _route
       };
     }
   }

@@ -4,8 +4,7 @@ export const componentsSidebar: Routes = {
   routes: [
     {
       title: 'Getting Started',
-      path: '/docs/getting-started',
-      routes: []
+      path: '/docs/getting-started'
     },
     {
       title: 'Components',
@@ -25,6 +24,10 @@ export const componentsSidebar: Routes = {
           title: 'Forms',
           path: '/docs/components/forms',
           routes: [
+            {
+              title: 'Button',
+              path: '/docs/components/forms/button'
+            },
             {
               title: 'Textarea',
               path: '/docs/components/forms/textarea'
