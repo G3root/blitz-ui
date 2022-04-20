@@ -10,7 +10,8 @@ export const SpinnerInnerStyle = cva('animate-spin motion-reduce:hidden ', {
       danger: 'text-danger-11',
       neutral: 'text-neutral-11',
       hiContrast: 'text-hiContrast',
-      loContrast: 'text-loContrast'
+      loContrast: 'text-loContrast',
+      transparent: ''
     },
     size: {
       xs: 'h-3 w-3',

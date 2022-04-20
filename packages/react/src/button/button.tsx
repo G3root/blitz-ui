@@ -126,13 +126,13 @@ export const Button = createComponent<ButtonProps>(
               <>
                 {loadingText}
                 <span className="ml-2">
-                  {spinner ? <>{spinner} </> : <Spinner />}
+                  {spinner ? <>{spinner} </> : <Spinner color="transparent" />}
                 </span>
               </>
             ) : (
               <>
                 <span className="mr-2">
-                  {spinner ? <>{spinner} </> : <Spinner />}
+                  {spinner ? <>{spinner} </> : <Spinner color="transparent" />}
                 </span>
                 {loadingText}
               </>
@@ -146,7 +146,7 @@ export const Button = createComponent<ButtonProps>(
               </>
             ) : (
               <>
-                <Spinner />
+                <Spinner color="transparent" />
                 <span className="sr-only">Loading...</span>
               </>
             )}
