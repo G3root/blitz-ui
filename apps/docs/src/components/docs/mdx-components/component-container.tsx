@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface ComponentContainerProps {
   children: React.ReactNode;
@@ -7,11 +7,11 @@ export interface ComponentContainerProps {
 
 export function ComponentContainer({
   children,
-  className,
+  className
 }: ComponentContainerProps) {
   return (
     <div
-      className={`p-4 border rounded-xl mt-6 mb-4 border-neutral-4 ${className}`}
+      className={`p-4 border rounded-xl mt-6 mb-4 border-neutral-4 overflow-x-auto ${className}`}
     >
       {children}
     </div>
