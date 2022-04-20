@@ -26,13 +26,14 @@ const [TagSizeProvider, useTagSizeContext] = createContext<{
 });
 
 const useTagInner = createHook<TagInnerOptions>(
-  ({ color, size, variant, ...props }) => {
+  ({ color, size, shape, variant, ...props }) => {
     props = {
       ...props,
       className: tagInnerStyle({
         color,
         size,
         variant,
+        shape,
         class: props.className
       })
     };

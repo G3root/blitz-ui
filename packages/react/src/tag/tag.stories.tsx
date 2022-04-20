@@ -18,6 +18,10 @@ Template.argTypes = {
     control: { type: 'select' },
     options: ['sm', 'md', 'lg']
   },
+  shape: {
+    control: { type: 'select' },
+    options: ['rounded', 'square']
+  },
   variant: {
     control: { type: 'select' },
     options: ['solid', 'subtle', 'outline']

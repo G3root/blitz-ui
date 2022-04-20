@@ -1,7 +1,7 @@
 import { cva, VariantProps } from '../utils';
 
 export const tagInnerStyle = cva(
-  'rounded-l-full rounded-r-full font-medium inline-flex items-center justify-center',
+  ' font-medium inline-flex items-center justify-center',
   {
     variants: {
       color: {
@@ -13,14 +13,18 @@ export const tagInnerStyle = cva(
         neutral: ''
       },
       size: {
-        sm: 'h-5 px-1.5 text-xs',
-        md: 'h-7 px-2 text-xs',
+        sm: 'h-5 px-2 text-xs',
+        md: 'h-6 px-2 text-sm',
         lg: 'h-8 px-3 text-base'
       },
       variant: {
         solid: '',
         subtle: '',
         outline: ''
+      },
+      shape: {
+        rounded: 'rounded-full',
+        square: 'rounded-md'
       }
     },
     compoundVariants: [
@@ -121,7 +125,8 @@ export const tagInnerStyle = cva(
     defaultVariants: {
       color: 'neutral',
       variant: 'subtle',
-      size: 'md'
+      size: 'md',
+      shape: 'rounded'
     }
   }
 );
