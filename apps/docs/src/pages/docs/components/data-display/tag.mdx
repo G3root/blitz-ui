@@ -1,0 +1,319 @@
+---
+title: Tag
+description:
+  Tag component is used for items that need to be labeled, categorized,
+  or organized using keywords that describe them.
+---
+
+import { PlusIcon } from '@heroicons/react/solid';
+
+# Tag
+
+`Tag` component is used for items that need to be labeled, categorized,
+or organized using keywords that describe them.
+
+## Import
+
+Blitz UI exports 5 Tag related components:
+
+- **Tag**: The wrapper for all the tag elements.
+- **TagLabel**: The label for tag's text content.
+- **TagIconLeft**: The icon placed on the left side of the tag.
+- **TagRightIcon**: The icon placed on the right side of the tag.
+- **TagCloseButton**: The close button for the tag.
+
+```js
+import {
+  Tag,
+  TagLabel,
+  TagIconLeft,
+  TagRightIcon,
+  TagCloseButton
+} from '@blitz-ui/react';
+```
+
+## Usage
+
+<ComponentContainer>
+  <Tag>Sample Tag</Tag>
+</ComponentContainer>
+
+```jsx
+<Tag>Sample Tag</Tag>
+```
+
+### Tag colors
+
+Use the `color` prop to change the color of the Tag
+You can set the value to `primary`, `neutral`, `success`, `info`, `warning` or `danger`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag color="primary">Tag</Tag>
+    <Tag color="neutral">Tag</Tag>
+    <Tag color="success">Tag</Tag>
+    <Tag color="info">Tag</Tag>
+    <Tag color="warning">Tag</Tag>
+    <Tag color="danger">Tag</Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag color="primary">Tag</Tag>
+  <Tag color="neutral">Tag</Tag>
+  <Tag color="success">Tag</Tag>
+  <Tag color="info">Tag</Tag>
+  <Tag color="warning">Tag</Tag>
+  <Tag color="danger">Tag</Tag>
+</div>
+```
+
+### Tag sizes
+
+Use the size prop to change the size of the Tag You can set the value to `sm`, `md` or `lg`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag size="sm">Tag</Tag>
+    <Tag size="md">Tag</Tag>
+    <Tag size="lg">Tag</Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag size="sm">Tag</Tag>
+  <Tag size="md">Tag</Tag>
+  <Tag size="lg">Tag</Tag>
+</div>
+```
+
+### Tag shapes
+
+Use the `shape` prop to change the shape of the Tag You can set the value to `rounded` or `square`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag shape="rounded">Tag</Tag>
+    <Tag shape="square">Tag</Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag shape="rounded">Tag</Tag>
+  <Tag shape="square">Tag</Tag>
+</div>
+```
+
+### Tag variants
+
+Use the `variant` prop to change the visual style of the Tag You can set the value to `solid`, `subtle` or `outline`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag variant="solid">Tag</Tag>
+    <Tag variant="subtle">Tag</Tag>
+    <Tag variant="outline">Tag</Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag variant="solid">Tag</Tag>
+  <Tag variant="subtle">Tag</Tag>
+  <Tag variant="outline">Tag</Tag>
+</div>
+```
+
+Overview of all color and variant combination:
+
+<ComponentContainer>
+  <div className="flex flex-col  gap-4">
+    <div className="flex gap-4">
+      <Tag color="primary">Tag</Tag>
+      <Tag color="neutral">Tag</Tag>
+      <Tag color="success">Tag</Tag>
+      <Tag color="info">Tag</Tag>
+      <Tag color="warning">Tag</Tag>
+      <Tag color="danger">Tag</Tag>
+    </div>
+    <div className="flex gap-4">
+      <Tag variant="solid" color="primary">
+        Tag
+      </Tag>
+      <Tag variant="solid" color="neutral">
+        Tag
+      </Tag>
+      <Tag variant="solid" color="success">
+        Tag
+      </Tag>
+      <Tag variant="solid" color="info">
+        Tag
+      </Tag>
+      <Tag variant="solid" color="warning">
+        Tag
+      </Tag>
+      <Tag variant="solid" color="danger">
+        Tag
+      </Tag>
+    </div>
+    <div className="flex gap-4">
+      <Tag variant="outline" color="primary">
+        Tag
+      </Tag>
+      <Tag variant="outline" color="neutral">
+        Tag
+      </Tag>
+      <Tag variant="outline" color="success">
+        Tag
+      </Tag>
+      <Tag variant="outline" color="info">
+        Tag
+      </Tag>
+      <Tag variant="outline" color="warning">
+        Tag
+      </Tag>
+      <Tag variant="outline" color="danger">
+        Tag
+      </Tag>
+    </div>
+  </div>
+</ComponentContainer>
+
+### Tag with icon
+
+You can add left and right icons to the Tag component using the `TagIconLeft` and `TagIconRight` components respectively
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag size="sm">
+      <TagIconLeft icon={PlusIcon} />
+      <TagLabel>Tag</TagLabel>
+    </Tag>
+    <Tag size="md">
+      <TagIconLeft icon={PlusIcon} />
+      <TagLabel>Tag</TagLabel>
+    </Tag>
+    <Tag size="lg">
+      <TagIconLeft icon={PlusIcon} />
+      <TagLabel>Tag</TagLabel>
+    </Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag size="sm">
+    <TagIconLeft icon={PlusIcon} />
+    <TagLabel>Tag</TagLabel>
+  </Tag>
+  <Tag size="md">
+    <TagIconLeft icon={PlusIcon} />
+    <TagLabel>Tag</TagLabel>
+  </Tag>
+  <Tag size="lg">
+    <TagIconLeft icon={PlusIcon} />
+    <TagLabel>Tag</TagLabel>
+  </Tag>
+</div>
+```
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag size="sm">
+      <TagLabel>Tag</TagLabel>
+      <TagIconRight icon={PlusIcon} />
+    </Tag>
+    <Tag size="md">
+      <TagLabel>Tag</TagLabel>
+      <TagIconRight icon={PlusIcon} />
+    </Tag>
+    <Tag size="lg">
+      <TagLabel>Tag</TagLabel>
+      <TagIconRight icon={PlusIcon} />
+    </Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag size="sm">
+    <TagLabel>Tag</TagLabel>
+    <TagIconRight icon={PlusIcon} />
+  </Tag>
+  <Tag size="md">
+    <TagLabel>Tag</TagLabel>
+    <TagIconRight icon={PlusIcon} />
+  </Tag>
+  <Tag size="lg">
+    <TagLabel>Tag</TagLabel>
+    <TagIconRight icon={PlusIcon} />
+  </Tag>
+</div>
+```
+
+### Tag with close button
+
+Use the `TagCloseButton` component to add a close button to the Tag .
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Tag size="sm">
+      <TagLabel>Tag</TagLabel>
+      <TagCloseButton />
+    </Tag>
+    <Tag size="md">
+      <TagLabel>Tag</TagLabel>
+      <TagCloseButton />
+    </Tag>
+    <Tag size="lg">
+      <TagLabel>Tag</TagLabel>
+      <TagCloseButton />
+    </Tag>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Tag size="sm">
+    <TagLabel>Tag</TagLabel>
+    <TagCloseButton />
+  </Tag>
+  <Tag size="md">
+    <TagLabel>Tag</TagLabel>
+    <TagCloseButton />
+  </Tag>
+  <Tag size="lg">
+    <TagLabel>Tag</TagLabel>
+    <TagCloseButton />
+  </Tag>
+</div>
+```
+
+## Props
+
+##### `variant`
+
+- Description: The visual style of the tag.
+- Type: `solid` | `subtle` | `outline`
+- Default: `subtle`
+
+##### `color`
+
+- Description: The color of the tag.
+- Type: `primary` | `info` | `success` | `warning` | `danger` | `neutral`
+- Default: `neutral`
+
+##### `size`
+
+- Description: The size of the tag.
+- Type: `sm` | `md` | `lg`
+- Default: `md`
+
+##### `shape`
+
+- Description: The shape of the tag.
+- Type: `rounded` | `square`
+- Default: `rounded`

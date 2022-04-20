@@ -39,6 +39,16 @@ export const componentsSidebar: Routes = {
           ]
         },
         {
+          title: 'Data Display',
+          path: '/docs/components/data-display',
+          routes: [
+            {
+              title: 'Tag',
+              path: '/docs/components/data-display/tag'
+            }
+          ]
+        },
+        {
           title: 'Feedback',
           path: '/docs/components/feedback',
           routes: [
