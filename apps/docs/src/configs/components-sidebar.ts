@@ -29,6 +29,10 @@ export const componentsSidebar: Routes = {
               path: '/docs/components/forms/button'
             },
             {
+              title: 'Icon Button',
+              path: '/docs/components/forms/icon-button'
+            },
+            {
               title: 'Textarea',
               path: '/docs/components/forms/textarea'
             }

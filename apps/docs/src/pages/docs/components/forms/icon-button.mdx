@@ -1,0 +1,327 @@
+---
+title: Icon Button
+description: IconButton composes the Button component except that it renders only an icon.
+---
+
+import { SearchIcon } from '@heroicons/react/solid';
+
+# Icon Button
+
+IconButton composes the `Button` component except that it renders only an icon
+
+## Import
+
+```js
+import { IconButton } from '@blitz-ui/react';
+```
+
+## Usage
+
+<ComponentContainer>
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+  />
+</ComponentContainer>
+
+```jsx
+<IconButton
+  aria-label="Search database"
+  icon={<SearchIcon className="h-5 w-5" />}
+/>
+```
+
+### Button Colors
+
+The `IconButton` component accepts most of the props from the Button component,
+so we can use `color` prop to change the color of the button.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      color="primary"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      color="neutral"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      color="success"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      color="info"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      color="warning"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      color="danger"
+    />
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    color="primary"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    color="neutral"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    color="success"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    color="info"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    color="warning"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    color="danger"
+  />
+</div>
+```
+
+### Button Sizes
+
+Like the `Button` component, pass the `size` prop to change the size of the button.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      size="xs"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      size="sm"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      size="md"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      size="lg"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      size="xl"
+    />
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    size="xs"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    size="sm"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    size="md"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    size="lg"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    size="xl"
+  />
+</div>
+```
+
+### Button variants
+
+Like the `Button` component, pass the `variant` prop to change the style of the button.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      variant="solid"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      variant="flat"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      variant="ghost"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      variant="outline"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      variant="link"
+    />
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    variant="solid"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    variant="flat"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    variant="ghost"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    variant="outline"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    variant="link"
+  />
+</div>
+```
+
+### Button Shapes
+
+Like the `Button` component, pass the `shape` prop to change the shape of the button.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      shape="square"
+    />
+    <IconButton
+      aria-label="Search database"
+      icon={<SearchIcon className="h-5 w-5" />}
+      shape="pill"
+    />
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    shape="square"
+  />
+  <IconButton
+    aria-label="Search database"
+    icon={<SearchIcon className="h-5 w-5" />}
+    shape="pill"
+  />
+</div>
+```
+
+## Props
+
+##### `aria-label` <Tag color="danger">Required</Tag>
+
+- Description: A label that describes the button.
+- Type: `string`
+
+##### `icon`
+
+- Description: The icon to be used in the button.
+- Type: `JSX.Element`
+
+##### `variant`
+
+- Description: The visual style of the button.
+- Type: `solid` | `flat` | `ghost` | `outline` | `link`
+- Default: `solid`
+
+##### `color`
+
+- Description: The color of the button.
+- Type: `primary` | `info` | `success` | `warning` | `danger` | `neutral`
+- Default: `primary`
+
+##### `shape`
+
+- Description: The shape of the button.
+- Type: `pill` | `square`
+- Default: `square`
+
+##### `size`
+
+- Description: The size of the button.
+- Type: `xs` | `sm` | `md` | `lg` | `xl`
+- Default: `md`
+
+##### `disabled`
+
+- Description: If `true`, the button will be disabled.
+- Type: `boolean`
+- Default: `false`
+
+##### `loading`
+
+- Description: If `true`, the button will show a loader.
+- Type: `boolean`
+- Default: `false`
+
+##### `loadingText`
+
+- Description: The label to show in the button when `loading` is true.
+- Type: `string`
+
+##### `spinner`
+
+- Description: Replace the spinner component when `loading` is `true`.
+- Type: `JSX.Element`
