@@ -1,16 +1,16 @@
 import {
   ComputedFields,
   defineDocumentType,
-  makeSource,
-} from "contentlayer/source-files";
+  makeSource
+} from 'contentlayer/source-files';
 
-import theme from "./theme.json";
+import theme from './theme.json';
 
-import remarkGfm from "remark-gfm";
-import remarkSlug from "remark-slug";
-import rehypePrettyCode from "rehype-pretty-code";
-import { siteConfig } from "./src/configs";
-import { getTableOfContents, rehypeMdxCodeMeta } from "./src/utils";
+import remarkGfm from 'remark-gfm';
+import remarkSlug from 'remark-slug';
+import rehypePrettyCode from 'rehype-pretty-code';
+import { siteConfig } from './src/configs';
+import { getTableOfContents, rehypeMdxCodeMeta } from './src/utils';
 
 const rehypePrettyCodeOptions = {
   theme,
@@ -24,62 +24,62 @@ const rehypePrettyCodeOptions = {
     if (!node.properties.className) {
       node.properties.className = [];
     }
-    node.properties.className.push("highlighted");
+    node.properties.className.push('highlighted');
   },
   onVisitHighlightedWord(node: any) {
     // Style a highlighted word node.
     if (!node.properties.className) {
       node.properties.className = [];
     }
-    node.properties.className.push("highlighted");
-  },
+    node.properties.className.push('highlighted');
+  }
 };
 
 const computedFields: ComputedFields = {
   slug: {
-    type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    type: 'string',
+    resolve: (doc) => `/${doc._raw.flattenedPath}`
   },
   editUrl: {
-    type: "string",
-    resolve: (doc) => `${siteConfig.repo.editUrl}/${doc._id}`,
-  },
+    type: 'string',
+    resolve: (doc) => `${siteConfig.repo.editUrl}/${doc._id}`
+  }
 };
 
 const Doc = defineDocumentType(() => ({
-  name: "Doc",
-  filePathPattern: "docs/**/*.mdx",
-  contentType: "mdx",
+  name: 'Doc',
+  filePathPattern: 'docs/**/*.mdx',
+  contentType: 'mdx',
   fields: {
-    title: { type: "string", required: true },
-    description: { type: "string", required: true },
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true }
   },
   computedFields: {
     ...computedFields,
     frontMatter: {
-      type: "json",
+      type: 'json',
       resolve: (doc) => ({
         title: doc.title,
         description: doc.description,
-        category: doc._raw.sourceFileDir.replace("docs/components/", ""),
+        category: doc._raw.sourceFileDir.replace('docs/components/', ''),
         slug: `/${doc._raw.flattenedPath}`,
         headings: getTableOfContents(doc.body.raw),
-        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
-      }),
-    },
-  },
+        editUrl: `${siteConfig.repo.editUrl}/${doc._id}`
+      })
+    }
+  }
 }));
 
 const contentLayerConfig = makeSource({
-  contentDirPath: "src/pages",
+  contentDirPath: 'src/pages',
   documentTypes: [Doc],
   mdx: {
     rehypePlugins: [
       rehypeMdxCodeMeta,
-      [rehypePrettyCode, rehypePrettyCodeOptions],
+      [rehypePrettyCode, rehypePrettyCodeOptions]
     ],
-    remarkPlugins: [remarkSlug, remarkGfm],
-  },
+    remarkPlugins: [remarkSlug, remarkGfm]
+  }
 });
 
 export default contentLayerConfig;

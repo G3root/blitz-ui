@@ -1,6 +1,6 @@
-import { allDocs, Doc } from "contentlayer/generated";
+import { allDocs, Doc } from 'contentlayer/generated';
 
-interface Document extends Omit<Doc, "frontMatter"> {
+interface Document extends Omit<Doc, 'frontMatter'> {
   frontMatter: {
     category: string;
     headings: { id: string }[];

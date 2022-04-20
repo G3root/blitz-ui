@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Heading, IconButton } from "@blitz-ui/react";
-import Link from "next/link";
-import cn from "clsx";
-import { MoonIcon, SunIcon } from "@heroicons/react/solid";
-import { useTheme } from "next-themes";
-import { useMenu, useMenuSet } from "~/contexts";
+import * as React from 'react';
+import { Heading, IconButton } from '@blitz-ui/react';
+import Link from 'next/link';
+import cn from 'clsx';
+import { MoonIcon, SunIcon } from '@heroicons/react/solid';
+import { useTheme } from 'next-themes';
+import { useMenu, useMenuSet } from '~/contexts';
 
 export interface IHeaderProps {}
 
@@ -59,14 +59,14 @@ export function Header(props: IHeaderProps) {
             size="sm"
             className="text-hiContrast"
             onClick={() => {
-              if (theme === "dark") {
-                setTheme("light");
+              if (theme === 'dark') {
+                setTheme('light');
               } else {
-                setTheme("dark");
+                setTheme('dark');
               }
             }}
             icon={
-              theme === "dark" ? (
+              theme === 'dark' ? (
                 <SunIcon className="h-5 w-5" />
               ) : (
                 <MoonIcon className="h-5 w-5" />

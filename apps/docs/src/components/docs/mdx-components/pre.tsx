@@ -1,7 +1,7 @@
-import * as React from "react";
-import copy from "copy-text-to-clipboard";
-import { IconButton } from "@blitz-ui/react";
-import cx from "clsx";
+import * as React from 'react';
+import copy from 'copy-text-to-clipboard';
+import { IconButton } from '@blitz-ui/react';
+import cx from 'clsx';
 
 export interface PreProps {
   children: JSX.Element;
@@ -33,13 +33,13 @@ export function Pre({ children, className, ...props }: PreProps) {
       <IconButton
         onClick={onClick}
         variant="outline"
-        aria-label={copied ? "copied" : "copy"}
+        aria-label={copied ? 'copied' : 'copy'}
         size="xs"
         className="absolute top-0 right-0 mt-2 mr-2"
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={cx("h-4 w-4 pointer-events-none")}
+            className={cx('h-4 w-4 pointer-events-none')}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

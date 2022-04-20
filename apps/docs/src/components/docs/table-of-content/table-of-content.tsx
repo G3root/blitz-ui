@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Heading } from "~/components/docs";
-import cn from "clsx";
-import { useActiveAnchor } from "~/contexts";
-import scrollIntoView from "scroll-into-view-if-needed";
+import * as React from 'react';
+import { Heading } from '~/components/docs';
+import cn from 'clsx';
+import { useActiveAnchor } from '~/contexts';
+import scrollIntoView from 'scroll-into-view-if-needed';
 
 export interface TableOfContentProps {
   headings: Heading[];
@@ -11,7 +11,7 @@ export interface TableOfContentProps {
 interface ItemProps {
   text: string;
   isActive?: boolean;
-  level: Heading["level"];
+  level: Heading['level'];
   id: string;
 }
 
@@ -20,33 +20,33 @@ const Item = ({ text, isActive, level, id }: ItemProps) => {
 
   React.useEffect(() => {
     const el = ref.current;
-    const toc = document.getElementsByClassName("nextra-toc")[0];
+    const toc = document.getElementsByClassName('nextra-toc')[0];
     if (isActive && el && toc) {
       scrollIntoView(el, {
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-        scrollMode: "always",
-        boundary: toc,
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
+        scrollMode: 'always',
+        boundary: toc
       });
     }
   }, [isActive]);
   return (
     <li
-      className={cn("scroll-py-6 scroll-my-6", level === "h3" && "ml-4")}
+      className={cn('scroll-py-6 scroll-my-6', level === 'h3' && 'ml-4')}
       key={id}
       ref={ref}
     >
       <a
         href={`#${id}`}
         className={cn(
-          "no-underline inline-block",
-          level === "h3" ? "font-semibold" : "",
+          'no-underline inline-block',
+          level === 'h3' ? 'font-semibold' : '',
           isActive
-            ? "text-prime-500 subpixel-antialiased"
-            : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
+            ? 'text-prime-500 subpixel-antialiased'
+            : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300'
         )}
-        aria-current={isActive ? "true" : undefined}
+        aria-current={isActive ? 'true' : undefined}
       >
         {text}
       </a>

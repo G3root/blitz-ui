@@ -1,13 +1,13 @@
-import * as React from "react";
-import { useRouter } from "next/router";
-import { Header } from "~/components/docs";
-import { Footer } from "../footer";
-import { TableOfContent } from "../table-of-content";
-import { ActiveAnchor, MenuStateProvider } from "~/contexts";
-import { NextSeo } from "next-seo";
+import * as React from 'react';
+import { useRouter } from 'next/router';
+import { Header } from '~/components/docs';
+import { Footer } from '../footer';
+import { TableOfContent } from '../table-of-content';
+import { ActiveAnchor, MenuStateProvider } from '~/contexts';
+import { NextSeo } from 'next-seo';
 
 export interface Heading {
-  level: "h2" | "h3";
+  level: 'h2' | 'h3';
   text: string;
   id: string;
 }
@@ -17,12 +17,12 @@ function useHeadingFocusOnRouteChange() {
 
   React.useEffect(() => {
     const onRouteChange = () => {
-      const [heading] = Array.from(document.getElementsByTagName("h1"));
+      const [heading] = Array.from(document.getElementsByTagName('h1'));
       heading?.focus();
     };
-    router.events.on("routeChangeComplete", onRouteChange);
+    router.events.on('routeChangeComplete', onRouteChange);
     return () => {
-      router.events.off("routeChangeComplete", onRouteChange);
+      router.events.off('routeChangeComplete', onRouteChange);
     };
   }, [router.events]);
 }

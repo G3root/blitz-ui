@@ -4,8 +4,8 @@ import {
   PropsWithChildren,
   useState,
   Dispatch,
-  SetStateAction,
-} from "react";
+  SetStateAction
+} from 'react';
 
 type MenuContext = boolean;
 

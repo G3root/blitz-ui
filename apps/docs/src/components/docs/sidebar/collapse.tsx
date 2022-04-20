@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from 'react';
 
 export function Collapse({
   children,
-  open,
+  open
 }: {
   children: React.ReactNode;
   open: boolean;
@@ -24,15 +24,15 @@ export function Collapse({
       const inner = innerRef.current;
       if (container && inner) {
         const contentHeight = innerRef.current.clientHeight;
-        container.style.maxHeight = contentHeight + "px";
-        container.classList.remove("duration-500");
-        container.classList.add("duration-300");
+        container.style.maxHeight = contentHeight + 'px';
+        container.classList.remove('duration-500');
+        container.classList.add('duration-300');
 
-        inner.style.opacity = "1";
+        inner.style.opacity = '1';
         animationRef.current = setTimeout(() => {
           const container = containerRef.current;
           if (container) {
-            container.style.removeProperty("max-height");
+            container.style.removeProperty('max-height');
           }
         }, 300);
       }
@@ -41,15 +41,15 @@ export function Collapse({
       const inner = innerRef.current;
       if (container && inner) {
         const contentHeight = innerRef.current.clientHeight;
-        container.style.maxHeight = contentHeight + "px";
-        container.classList.remove("duration-300");
-        container.classList.add("duration-500");
+        container.style.maxHeight = contentHeight + 'px';
+        container.classList.remove('duration-300');
+        container.classList.add('duration-500');
 
-        inner.style.opacity = "0";
+        inner.style.opacity = '0';
         setTimeout(() => {
           const container = containerRef.current;
           if (container) {
-            container.style.maxHeight = "0px";
+            container.style.maxHeight = '0px';
           }
         });
       }
@@ -65,14 +65,14 @@ export function Collapse({
       ref={containerRef}
       className="transition-all ease-in-out duration-300 overflow-hidden transform-gpu motion-reduce:transition-none"
       style={{
-        maxHeight: initialState.current ? undefined : 0,
+        maxHeight: initialState.current ? undefined : 0
       }}
     >
       <div
         ref={innerRef}
         className="nextra-collapse-content transition-opacity ease-in-out duration-500 overflow-hidden transform-gpu motion-reduce:transition-none"
         style={{
-          opacity: initialState.current ? 1 : 0,
+          opacity: initialState.current ? 1 : 0
         }}
       >
         {children}

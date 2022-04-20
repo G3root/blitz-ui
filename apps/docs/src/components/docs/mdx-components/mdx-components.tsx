@@ -1,10 +1,10 @@
 /* eslint-disable react/display-name */
-import * as React from "react";
-import "intersection-observer";
-import { ActiveAnchor, useActiveAnchorSet } from "~/contexts";
-import { Pre } from "./pre";
-import { ComponentContainer } from "./component-container";
-import * as Blitz from "@blitz-ui/react";
+import * as React from 'react';
+import 'intersection-observer';
+import { ActiveAnchor, useActiveAnchorSet } from '~/contexts';
+import { Pre } from './pre';
+import { ComponentContainer } from './component-container';
+import * as Blitz from '@blitz-ui/react';
 
 export interface LinkedHeadingProps {
   as: React.ElementType;
@@ -19,7 +19,7 @@ let setActiveAnchor: (
 ) => void;
 const slugs = new WeakMap();
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   observer =
     observer! ||
     new IntersectionObserver(
@@ -46,11 +46,11 @@ if (typeof window !== "undefined") {
             ret[header[0]] = {
               index: header[1],
               aboveHalfViewport: header[2],
-              insideHalfViewport: header[3],
+              insideHalfViewport: header[3]
             };
           }
 
-          let activeSlug = "";
+          let activeSlug = '';
           let smallestIndexInViewport = Infinity;
           let largestIndexAboveViewport = -1;
           for (let s in ret) {
@@ -77,8 +77,8 @@ if (typeof window !== "undefined") {
         });
       },
       {
-        rootMargin: "0px 0px -50%",
-        threshold: [0, 1],
+        rootMargin: '0px 0px -50%',
+        threshold: [0, 1]
       }
     );
 }
@@ -87,7 +87,7 @@ export function LinkedHeading({
   children,
   id,
   as,
-  context,
+  context
 }: LinkedHeadingProps) {
   setActiveAnchor = useActiveAnchorSet();
   const obRef = React.useRef<HTMLSpanElement>(null);
@@ -117,7 +117,7 @@ export function LinkedHeading({
   return (
     <Comp className="docs">
       {anchor}
-      <a href={"#" + slug} className="text-current no-underline no-outline">
+      <a href={'#' + slug} className="text-current no-underline no-outline">
         {children}
         <span className="anchor-icon" aria-hidden>
           #
@@ -195,5 +195,5 @@ export const MDXComponents = (context: { index: number }) => ({
   ComponentContainer: ({ children, ...rest }: any) => (
     <ComponentContainer {...rest}>{children}</ComponentContainer>
   ),
-  ...Blitz,
+  ...Blitz
 });

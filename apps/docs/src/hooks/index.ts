@@ -1,1 +1,1 @@
-export * from "./use-scrollspy";
+export * from './use-scrollspy';
