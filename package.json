@@ -17,6 +17,7 @@
     "prepare": "husky install",
     "dev-docs": "turbo run dev --filter=docs",
     "build-docs": "turbo run build --filter=docs",
+    "start-docs": "turbo run start --filter=docs",
     "build-react": "turbo run build --filter=@blitz-ui/react",
     "build-core": "turbo run build --filter=@blitz-ui/core"
   },

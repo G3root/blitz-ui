@@ -12,6 +12,10 @@
     "test": {
       "outputs": []
     },
+    "start": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
     "coverage": {
       "outputs": ["coverage/**"]
     },
