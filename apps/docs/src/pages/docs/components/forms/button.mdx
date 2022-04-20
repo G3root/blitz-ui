@@ -1,0 +1,294 @@
+---
+title: Button
+description:
+  Button component is used to trigger an action or event, such as submitting a
+  form, opening a Dialog, canceling an action, or performing a delete operation.
+---
+
+import {
+  MailIcon,
+  ArrowRightIcon,
+  CubeTransparentIcon
+} from '@heroicons/react/solid';
+
+# Button
+
+The Button component is used to trigger an action or event, such as submitting a
+form, opening a dialog, canceling an action, or performing a delete operation.
+
+### Import
+
+```js
+import { Button } from '@blitz-ui/react';
+```
+
+### Usage
+
+<ComponentContainer>
+  <Button>Button</Button>
+</ComponentContainer>
+
+```jsx
+<Button>Button</Button>
+```
+
+### Button colors
+
+Use the `color` prop to change the color of the Button.
+You can set the value to `primary`, `neutral`, `success`, `info`, `warning` or `danger`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Button color="primary">Button</Button>
+    <Button color="neutral">Button</Button>
+    <Button color="success">Button</Button>
+    <Button color="info">Button</Button>
+    <Button color="warning">Button</Button>
+    <Button color="danger">Button</Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button color="primary">Button</Button>
+  <Button color="neutral">Button</Button>
+  <Button color="success">Button</Button>
+  <Button color="info">Button</Button>
+  <Button color="warning">Button</Button>
+  <Button color="danger">Button</Button>
+</div>
+```
+
+### Button Shapes
+
+Use the `shape` prop to change the shape of the Button.
+You can set the value to `square` or `pill`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Button shape="square">Button</Button>
+    <Button shape="pill">Button</Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button shape="square">Button</Button>
+  <Button shape="pill">Button</Button>
+</div>
+```
+
+### Button Sizes
+
+Use the `size` prop to change the size of the Button.
+You can set the value to `xs`, `sm`, `md`, `lg` or `xl`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Button size="xs">Button</Button>
+    <Button size="sm">Button</Button>
+    <Button size="md">Button</Button>
+    <Button size="lg">Button</Button>
+    <Button size="xl">Button</Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button size="xs">Button</Button>
+  <Button size="sm">Button</Button>
+  <Button size="md">Button</Button>
+  <Button size="lg">Button</Button>
+  <Button size="xl">Button</Button>
+</div>
+```
+
+### Button variants
+
+Use the `variant` prop to change the visual style of the Button.
+You can set the value to `solid`, `flat`, `ghost`, `outline` or `link`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Button variant="solid">Button</Button>
+    <Button variant="flat">Button</Button>
+    <Button variant="ghost">Button</Button>
+    <Button variant="outline">Button</Button>
+    <Button variant="link">Button</Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button variant="solid">Button</Button>
+  <Button variant="flat">Button</Button>
+  <Button variant="ghost">Button</Button>
+  <Button variant="outline">Button</Button>
+  <Button variant="link">Button</Button>
+</div>
+```
+
+### Button with icon
+
+You can add left and right icons to the Button component using the `leftIcon` and `rightIcon` props respectively.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    {/* prettier-ignore */}
+    <Button leftIcon={<MailIcon className="h-5 w-5" />}>Button</Button>
+    {/* prettier-ignore */}
+    <Button rightIcon={<ArrowRightIcon className="h-5 w-5" />} variant="outline">Button</Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button leftIcon={<MailIcon className="h-5 w-5" />}>Button</Button>
+  <Button rightIcon={<ArrowRightIcon className="h-5 w-5" />} variant="outline">
+    Button
+  </Button>
+</div>
+```
+
+### Button loading state
+
+Pass the `loading` prop to show its loading state.
+By default, the button will show a spinner and leave the button's width unchanged.
+You can also pass the `loadingText` prop to show a spinner and the loading text.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    <Button loading>Loading</Button>
+    <Button variant="outline" loading loadingText="Submitting">
+      Submit
+    </Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button loading>Loading</Button>
+  <Button variant="outline" loading loadingText="Submitting">
+    Submit
+  </Button>
+</div>
+```
+
+You can change the spinner element to use custom loaders as per your design requirements.
+Pass the `spinner` prop and set it to a custom react element.
+
+<ComponentContainer>
+  <Button
+    loading
+    spinner={<CubeTransparentIcon className="h-5 w-5 animate-spin" />}
+  >
+    Click me
+  </Button>
+</ComponentContainer>
+
+```jsx
+<Button
+  loading
+  spinner={<CubeTransparentIcon className="h-5 w-5 animate-spin" />}
+>
+  Click me
+</Button>
+```
+
+When a `loaderText` is present, you can change the placement of the loader element to either `start` or `end`.
+
+<ComponentContainer>
+  <div className="flex items-center gap-2">
+    {/* prettier-ignore */}
+    <Button variant="outline" loading loadingText="Loading" spinnerPlacement="start">Submit</Button>
+    {/* prettier-ignore */}
+    <Button variant="outline" loading loadingText="Loading" spinnerPlacement="end">Continue</Button>
+  </div>
+</ComponentContainer>
+
+```jsx
+<div className="flex items-center gap-2">
+  <Button
+    variant="outline"
+    loading
+    loadingText="Loading"
+    spinnerPlacement="start"
+  >
+    Submit
+  </Button>
+  <Button
+    variant="outline"
+    loading
+    loadingText="Loading"
+    spinnerPlacement="end"
+  >
+    Continue
+  </Button>
+</div>
+```
+
+### Props
+
+#### Button props
+
+##### `variant`
+
+- Description: The visual style of the button.
+- Type: `solid` | `flat` | `ghost` | `outline` | `link`
+- Default: `solid`
+
+##### `color`
+
+- Description: The color of the button.
+- Type: `primary` | `info` | `success` | `warning` | `danger` | `neutral`
+- Default: `primary`
+
+##### `shape`
+
+- Description: The shape of the button.
+- Type: `pill` | `square`
+- Default: `square`
+
+##### `size`
+
+- Description: The size of the button.
+- Type: `xs` | `sm` | `md` | `lg` | `xl`
+- Default: `md`
+
+##### `disabled`
+
+- Description: If `true`, the button will be disabled.
+- Type: `boolean`
+- Default: `false`
+
+##### `loading`
+
+- Description: If `true`, the button will show a loader.
+- Type: `boolean`
+- Default: `false`
+
+##### `loadingText`
+
+- Description: The label to show in the button when `loading` is true.
+- Type: `string`
+
+##### `spinner`
+
+- Description: Replace the spinner component when `loading` is `true`.
+- Type: `JSX.Element`
+
+##### `spinnerPlacement`
+
+- Description: Determines the placement of the spinner when `loading` is `true`.
+- Type: `start` | `end`
+- Default: `start`
+
+##### `leftIcon`
+
+- Description: If added, the button will show an icon before the button's label.
+- Type: `JSX.Element`
+
+##### `rightIcon`
+
+- Description: If added, the button will show an icon after the button's label.
+- Type: `JSX.Element`
