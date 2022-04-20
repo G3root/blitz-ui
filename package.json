@@ -14,7 +14,11 @@
     "build-storybook": "turbo run build-storybook",
     "test": "turbo run test",
     "coverage": "turbo run coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev-docs": "turbo run dev --filter=docs",
+    "build-docs": "turbo run build --filter=docs",
+    "build-react": "turbo run build --filter=@blitz-ui/react",
+    "build-core": "turbo run build --filter=@blitz-ui/core"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.3",
