@@ -3,7 +3,11 @@
   "tag": "beta",
   "initialVersions": {
     "@blitz-ui/core": "0.0.0",
-    "@blitz-ui/react": "0.0.0"
+    "@blitz-ui/react": "0.0.0",
+    "docs": "0.1.0"
   },
-  "changesets": ["ten-pears-fail"]
+  "changesets": [
+    "fast-ducks-brush",
+    "ten-pears-fail"
+  ]
 }
